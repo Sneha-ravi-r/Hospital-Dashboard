@@ -1,0 +1,25 @@
+table CRM_DF_Version
+	lineageTag: 1455f85c-4d35-45ab-b502-f37ac82f9311
+
+	column 'DF Version'
+		dataType: string
+		lineageTag: 13fdec4c-6672-4947-ab9d-3b4842e2d4dd
+		summarizeBy: none
+		sourceColumn: DF Version
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CRM_DF_Version = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    #"4a0f34fa-bad3-4e18-9a9e-c0d9d59b232d" = Workspaces{[workspaceId="4a0f34fa-bad3-4e18-9a9e-c0d9d59b232d"]}[Data],
+				    #"2998fc6f-2073-4426-923c-7e6fe3386a3c" = #"4a0f34fa-bad3-4e18-9a9e-c0d9d59b232d"{[dataflowId="2998fc6f-2073-4426-923c-7e6fe3386a3c"]}[Data],
+				    CRM_DF_Version_ = #"2998fc6f-2073-4426-923c-7e6fe3386a3c"{[entity="CRM_DF_Version",version=""]}[Data]
+				in
+				    CRM_DF_Version_
+
+	annotation PBI_ResultType = Table
+

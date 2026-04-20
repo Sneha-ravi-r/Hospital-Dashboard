@@ -1,0 +1,34 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["CRM_Country","CRM_Customer","CRM_DB_Name","CRM_DF_Last_Updated","CRM_DF_Version","CRM_Finance_System","Workspace","Environment"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table CRM_Country
+ref table DateTableTemplate_d4802c0a-925d-4654-bdb2-66967aff6799
+ref table LocalDateTable_78a946c2-84b4-4b0f-a60d-2aedfbdfab29
+ref table LocalDateTable_03522684-0af2-4903-8974-4b638171c6bc
+ref table CRM_Customer
+ref table LocalDateTable_4f89d768-43ed-4aef-912c-312a4d9bfeb3
+ref table LocalDateTable_2d79138e-fd09-44d3-9178-04ecd202ffea
+ref table CRM_DB_Name
+ref table CRM_DF_Last_Updated
+ref table LocalDateTable_f85ea18d-dd2c-44d9-9926-18692c265dbd
+ref table CRM_DF_Version
+ref table CRM_Finance_System
+ref table LocalDateTable_b5c14c56-0b92-4f73-941b-18abfe13f4b8
+ref table LocalDateTable_bda348ee-59b1-4464-9b1d-f14397156c69
+ref table Date
+ref table LocalDateTable_6af2e616-3411-4cc7-bb79-a77ad0461892
+ref table LocalDateTable_6c9d83b7-022b-4174-a598-6a6b40f8ebc2
+
+ref cultureInfo en-IN
+

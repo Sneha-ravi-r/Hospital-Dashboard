@@ -1,0 +1,53 @@
+relationship e666b7b5-5fa4-479f-be93-dbde55e8e51a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CRM_Country.date_created
+	toColumn: LocalDateTable_78a946c2-84b4-4b0f-a60d-2aedfbdfab29.Date
+
+relationship 6edd1d9f-5d65-4275-bbfb-a230b7780b74
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CRM_Country.date_last_updated
+	toColumn: LocalDateTable_03522684-0af2-4903-8974-4b638171c6bc.Date
+
+relationship 1593f3da-ad1e-45fb-ac33-fc6f48ffe834
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CRM_Customer.date_last_updated
+	toColumn: LocalDateTable_4f89d768-43ed-4aef-912c-312a4d9bfeb3.Date
+
+relationship 8569dc08-491f-4c1a-83ac-4c0067b4b849
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CRM_Customer.date_credit_hold
+	toColumn: LocalDateTable_2d79138e-fd09-44d3-9178-04ecd202ffea.Date
+
+relationship fd7f32b8-9c5e-4022-b7e8-f13ca1ddf9dd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CRM_DF_Last_Updated.'Updated Time in UTC'
+	toColumn: LocalDateTable_f85ea18d-dd2c-44d9-9926-18692c265dbd.Date
+
+relationship 9bd6e7e8-45b7-41c9-942a-356c7e3a6282
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CRM_Finance_System.date_created
+	toColumn: LocalDateTable_b5c14c56-0b92-4f73-941b-18abfe13f4b8.Date
+
+relationship fb8488e3-a074-4306-ac1d-313b98c882e6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CRM_Finance_System.date_last_updated
+	toColumn: LocalDateTable_bda348ee-59b1-4464-9b1d-f14397156c69.Date
+
+relationship 93299506-986c-460d-9720-33b1d52c692c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date.Date
+	toColumn: LocalDateTable_6af2e616-3411-4cc7-bb79-a77ad0461892.Date
+
+relationship 99220559-fd7a-4b4b-b103-a94407f771c2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CRM_Customer.date_created
+	toColumn: LocalDateTable_6c9d83b7-022b-4174-a598-6a6b40f8ebc2.Date
+
+relationship 4d74174f-85ce-a406-b871-125495e50f80
+	fromColumn: CRM_Customer.'Date Only'
+	toColumn: Date.Date
+
+relationship d0712d80-f16a-a2e7-f7e8-9b823c74633e
+	fromColumn: CRM_Customer.finance_system_id
+	toColumn: CRM_Finance_System.id
+

@@ -1,0 +1,108 @@
+table Date
+	lineageTag: 22131c67-efc5-4e2c-ba15-a76261a70ffa
+
+	column Date
+		formatString: General Date
+		lineageTag: 8342253e-6ee9-44a4-b14c-46088c967164
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 93299506-986c-460d-9720-33b1d52c692c
+			defaultHierarchy: LocalDateTable_6af2e616-3411-4cc7-bb79-a77ad0461892.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year = YEAR('Date'[Date])
+		formatString: 0
+		lineageTag: f5cdc877-fc24-441f-8d92-3411e72fef29
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month = FORMAT('Date'[Date], "MMM")
+		lineageTag: 6bda1b00-b7a7-4c57-8956-198e202f1e6d
+		summarizeBy: none
+		sortByColumn: 'Month Number'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number' = MONTH('Date'[Date])
+		formatString: 0
+		lineageTag: 02a5c41c-1b7c-414a-96d1-0f59346832b8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth = FORMAT('Date'[Date], "YYYY-MM")
+		lineageTag: 9b4fc0bc-f5a1-4c40-ae1c-24023b4cb9c1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter = QUARTER('Date'[Date])
+		formatString: 0
+		lineageTag: 33dbc58d-29e5-4dbd-a29f-194e080b1c10
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day = DAY('Date'[Date])
+		formatString: 0
+		lineageTag: aeec803a-2de3-4fc3-9da3-460b4d471ff6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Date Hierarchy'
+		lineageTag: 2a026bef-7766-4585-8560-ddf464e7daeb
+
+		level Year
+			lineageTag: ce366055-a0de-4d1e-9a79-960b952e470f
+			column: Year
+
+		level Month
+			lineageTag: 7970e6be-0704-45b7-905f-d9ac60103971
+			column: Month
+
+		level Quarter
+			lineageTag: 7ab3e68e-d25f-4bd7-8d14-4ef07f63e1dc
+			column: Quarter
+
+		level Day
+			lineageTag: d67f081c-47d7-4902-bc16-14d7f009f519
+			column: Day
+
+	hierarchy 'Date Hierarchy 2'
+		lineageTag: 30015595-2a6b-4a98-9f33-1eab3e07b6bc
+
+		level Date
+			lineageTag: 3af5ab63-32a0-4b2e-ae43-98b25cec4aeb
+			column: Date
+
+		level Year
+			lineageTag: 44dfb8ce-4b15-4fff-ad22-c8279d5ca28b
+			column: Year
+
+		level Quarter
+			lineageTag: faab1428-2d69-4d61-b433-2d26ec5fbd6e
+			column: Quarter
+
+		level Month
+			lineageTag: b8ac43cd-6489-400b-bb24-b133002ca418
+			column: Month
+
+		level Day
+			lineageTag: 6a1a95d8-829e-4b0d-9839-6b5b351fd9b9
+			column: Day
+
+	partition Date = calculated
+		mode: import
+		source =
+				CALENDAR(MIN(CRM_Customer[date_created]),
+				MAX(CRM_Customer[date_created]))
+
+	annotation PBI_Id = 9ee98d7518c349a2ac12220215887a40
+

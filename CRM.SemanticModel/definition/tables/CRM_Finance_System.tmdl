@@ -1,0 +1,111 @@
+table CRM_Finance_System
+	lineageTag: e4c01d88-9ad9-46be-8449-4ebf47b0eb85
+
+	column id
+		dataType: string
+		lineageTag: 8b2a79e1-fbd8-488f-864b-c0b55896eef4
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: ce2bb8c1-66aa-4948-b640-8126072d176d
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance System'
+		dataType: string
+		lineageTag: cf41743a-3d0b-4abd-ba0c-341d3d3cfc63
+		summarizeBy: none
+		sourceColumn: Finance System
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: b90a0f56-759a-498b-9f33-6d07c4198e04
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		lineageTag: 3df739d6-0ebd-4892-921d-28f6a832f69b
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 96cc7a73-af43-47d2-818b-a627d4952d47
+		summarizeBy: none
+		sourceColumn: date_created
+
+		variation Variation
+			isDefault
+			relationship: 9bd6e7e8-45b7-41c9-942a-356c7e3a6282
+			defaultHierarchy: LocalDateTable_b5c14c56-0b92-4f73-941b-18abfe13f4b8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: 69f2bc96-301f-4bfb-96dd-b4f4052728a3
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6e97effd-1473-4990-80ca-8e167c6fee38
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		variation Variation
+			isDefault
+			relationship: fb8488e3-a074-4306-ac1d-313b98c882e6
+			defaultHierarchy: LocalDateTable_bda348ee-59b1-4464-9b1d-f14397156c69.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: ff8d4fee-e9be-4780-8af6-12d8dfeacf9f
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_code
+		dataType: string
+		lineageTag: 0b93f5e2-5a00-4f4f-af07-5b351023a970
+		summarizeBy: none
+		sourceColumn: business_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CRM_Finance_System = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    #"4a0f34fa-bad3-4e18-9a9e-c0d9d59b232d" = Workspaces{[workspaceId="4a0f34fa-bad3-4e18-9a9e-c0d9d59b232d"]}[Data],
+				    #"2998fc6f-2073-4426-923c-7e6fe3386a3c" = #"4a0f34fa-bad3-4e18-9a9e-c0d9d59b232d"{[dataflowId="2998fc6f-2073-4426-923c-7e6fe3386a3c"]}[Data],
+				    CRM_Finance_System_ = #"2998fc6f-2073-4426-923c-7e6fe3386a3c"{[entity="CRM_Finance_System",version=""]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(CRM_Finance_System_,{{"name_text", "Finance System"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+

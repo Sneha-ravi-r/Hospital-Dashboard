@@ -1,0 +1,295 @@
+table CRM_Customer
+	lineageTag: a29a9852-87e3-4551-9f1f-7e2a3f7a0f45
+
+	measure 'Total Customers' = COUNTROWS(CRM_Customer)
+		formatString: 0
+		lineageTag: 956e9e25-7fb2-46c0-9e7e-44472cf543f8
+
+	measure 'Active Customers' =
+			
+			CALCULATE(
+			    COUNTROWS(CRM_Customer),
+			    CRM_Customer[customer_status] = "customer.status.active"
+			)
+		formatString: 0
+		lineageTag: 1cd99e74-608d-46da-9ad0-90cb18d6b60a
+
+	column id
+		dataType: string
+		lineageTag: b6907042-451b-4f16-afc0-a6957342191b
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: 4fe21bb1-a6dd-4700-a775-6fd371e29f95
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_id
+		dataType: string
+		lineageTag: 60354569-bf27-4ba0-89b9-2570729a67ad
+		summarizeBy: none
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column finance_system_id
+		dataType: string
+		lineageTag: c971b7ba-81a3-4b8a-99e9-ed99e21218e8
+		summarizeBy: none
+		sourceColumn: finance_system_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_code
+		dataType: string
+		lineageTag: 10d24176-3910-4e9e-a007-642e5489d305
+		summarizeBy: none
+		sourceColumn: customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 678cf016-daf4-4f6d-b6c0-54c4a7fa9365
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		lineageTag: dc797c93-ad86-4645-a270-9815e04b635e
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4eb2f18b-4019-42f2-9bdf-8aa7cc952151
+		summarizeBy: none
+		sourceColumn: date_created
+
+		variation Variation
+			isDefault
+			relationship: 99220559-fd7a-4b4b-b103-a94407f771c2
+			defaultHierarchy: LocalDateTable_6c9d83b7-022b-4174-a598-6a6b40f8ebc2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: ba5f9834-a536-4ab2-b1e7-10075560c380
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c4adeaef-ab4b-4f36-a27b-8271712859af
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		variation Variation
+			isDefault
+			relationship: 1593f3da-ad1e-45fb-ac33-fc6f48ffe834
+			defaultHierarchy: LocalDateTable_4f89d768-43ed-4aef-912c-312a4d9bfeb3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: 73d32bc2-a16c-4cb1-810f-87996505e65c
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_name
+		dataType: string
+		lineageTag: 5890616c-9085-49e2-8835-4840fc5999bf
+		summarizeBy: none
+		sourceColumn: customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column legal_name
+		dataType: string
+		lineageTag: 13a1a4be-864b-498a-b6d9-9fa161b655a7
+		summarizeBy: none
+		sourceColumn: legal_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column dba_name
+		dataType: string
+		lineageTag: 34009035-f542-479b-9534-145984651943
+		summarizeBy: none
+		sourceColumn: dba_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column about_path
+		dataType: string
+		lineageTag: 4f84dac4-7348-4002-bfc2-c7835b2edb04
+		summarizeBy: none
+		sourceColumn: about_path
+
+		annotation SummarizationSetBy = Automatic
+
+	column reference_id
+		dataType: string
+		lineageTag: 906cd2e4-b86a-4fd0-a86d-235c19e38b9c
+		summarizeBy: none
+		sourceColumn: reference_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_origin_code
+		dataType: string
+		lineageTag: 919a299e-5915-42c9-b012-c1467b74e05a
+		summarizeBy: none
+		sourceColumn: data_origin_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column duns_number
+		dataType: string
+		lineageTag: 21164e96-1bdd-47ae-bb71-0d04203d56d0
+		summarizeBy: none
+		sourceColumn: duns_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency_iso_code
+		dataType: string
+		lineageTag: bedf04ad-067b-467f-afa7-db3835dae7c2
+		summarizeBy: none
+		sourceColumn: currency_iso_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_terms
+		dataType: string
+		lineageTag: 7035ced4-ac07-49a2-8e7a-85fbe205e91a
+		summarizeBy: none
+		sourceColumn: payment_terms
+
+		annotation SummarizationSetBy = Automatic
+
+	column credit_limit
+		dataType: double
+		lineageTag: a5d88b99-7aab-4948-8681-e27c7581eb16
+		summarizeBy: sum
+		sourceColumn: credit_limit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit_limit_currency_iso_code
+		dataType: string
+		lineageTag: d2d319ac-4337-4b71-b9a7-5a97c9b861e8
+		summarizeBy: none
+		sourceColumn: credit_limit_currency_iso_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column formerly_known_as
+		dataType: string
+		lineageTag: f3c6dc6f-1fe9-4fce-bd4c-86d8c0a31b06
+		summarizeBy: none
+		sourceColumn: formerly_known_as
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_status
+		dataType: string
+		lineageTag: ab26b568-9372-46cf-8c77-e627afb85863
+		summarizeBy: none
+		sourceColumn: customer_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column language_id
+		dataType: string
+		lineageTag: 6d8020a1-2053-4b89-951b-ce373f28967d
+		summarizeBy: none
+		sourceColumn: language_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_credit_hold
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c504952-8575-47fc-9983-d6ec10682866
+		summarizeBy: sum
+		sourceColumn: is_credit_hold
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_credit_hold
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5d14501c-4daa-4208-8da2-3b60f7f7f38e
+		summarizeBy: none
+		sourceColumn: date_credit_hold
+
+		variation Variation
+			isDefault
+			relationship: 8569dc08-491f-4c1a-83ac-4c0067b4b849
+			defaultHierarchy: LocalDateTable_2d79138e-fd09-44d3-9178-04ecd202ffea.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipping_account_number
+		dataType: string
+		lineageTag: 6004b35c-5af4-4205-a929-744d648dc032
+		summarizeBy: none
+		sourceColumn: shipping_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_iso_code
+		dataType: string
+		lineageTag: 13f9d248-7819-4abc-b781-b382c5ada6a2
+		summarizeBy: none
+		sourceColumn: country_iso_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Only' =
+			
+			DATE(
+			    YEAR(CRM_Customer[date_created]),
+			    MONTH(CRM_Customer[date_created]),
+			    DAY(CRM_Customer[date_created])
+			)
+		formatString: General Date
+		lineageTag: 6ae2054a-233e-4399-b3fb-91a0b076b576
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CRM_Customer = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    #"4a0f34fa-bad3-4e18-9a9e-c0d9d59b232d" = Workspaces{[workspaceId="4a0f34fa-bad3-4e18-9a9e-c0d9d59b232d"]}[Data],
+				    #"2998fc6f-2073-4426-923c-7e6fe3386a3c" = #"4a0f34fa-bad3-4e18-9a9e-c0d9d59b232d"{[dataflowId="2998fc6f-2073-4426-923c-7e6fe3386a3c"]}[Data],
+				    CRM_Customer_ = #"2998fc6f-2073-4426-923c-7e6fe3386a3c"{[entity="CRM_Customer",version=""]}[Data]
+				in
+				    CRM_Customer_
+

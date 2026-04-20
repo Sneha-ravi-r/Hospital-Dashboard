@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "75ad46b26224494d0cd7",
+  "position": {
+    "x": 7.5,
+    "y": 405,
+    "z": 1004,
+    "height": 257.5,
+    "width": 223.75,
+    "tabOrder": 1004
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CRM_Finance_System"
+                    }
+                  },
+                  "Property": "Finance System"
+                }
+              },
+              "queryRef": "CRM_Finance_System.name_text",
+              "nativeQueryRef": "Finance System",
+              "active": true,
+              "displayName": "Finance System"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,124 @@
+table CRM_Country
+	lineageTag: e8078a01-ff4d-472f-916f-6157999a28ec
+
+	column id
+		dataType: string
+		lineageTag: a780fd41-e685-4da4-8c62-1db59bfe96e0
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: 16982f1e-764c-4a54-9dd8-6f2a012cebeb
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name_text
+		dataType: string
+		lineageTag: c370226c-d3fd-4c4d-95fc-aaeb797d74ea
+		summarizeBy: none
+		sourceColumn: name_text
+
+		annotation SummarizationSetBy = Automatic
+
+	column iso_alpha_2_code
+		dataType: string
+		lineageTag: 44014c9a-428e-4cb3-8b65-794b68c01539
+		summarizeBy: none
+		sourceColumn: iso_alpha_2_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column iso_alpha_3_code
+		dataType: string
+		lineageTag: 457ea7fa-16d5-41e3-9931-5687a4355cae
+		summarizeBy: none
+		sourceColumn: iso_alpha_3_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: f28096ad-c7ac-4173-b15e-fadda1826821
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		lineageTag: d907520d-a5dc-4970-a8ef-5f5fad357ec1
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column address_format_id
+		dataType: string
+		lineageTag: d97e6f2b-bf5c-4e86-b365-69c40cee46c3
+		summarizeBy: none
+		sourceColumn: address_format_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ec178f74-cccb-457d-817f-70699edd50bd
+		summarizeBy: none
+		sourceColumn: date_created
+
+		variation Variation
+			isDefault
+			relationship: e666b7b5-5fa4-479f-be93-dbde55e8e51a
+			defaultHierarchy: LocalDateTable_78a946c2-84b4-4b0f-a60d-2aedfbdfab29.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: 33cccdbf-4dc4-4094-8198-a1467bdd51f3
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 626ca7d4-9946-4ce5-8e7b-09e91e9c409e
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		variation Variation
+			isDefault
+			relationship: 6edd1d9f-5d65-4275-bbfb-a230b7780b74
+			defaultHierarchy: LocalDateTable_03522684-0af2-4903-8974-4b638171c6bc.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: 4b50c570-f370-4ef6-8681-85ba3ed72b8f
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CRM_Country = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    #"4a0f34fa-bad3-4e18-9a9e-c0d9d59b232d" = Workspaces{[workspaceId="4a0f34fa-bad3-4e18-9a9e-c0d9d59b232d"]}[Data],
+				    #"2998fc6f-2073-4426-923c-7e6fe3386a3c" = #"4a0f34fa-bad3-4e18-9a9e-c0d9d59b232d"{[dataflowId="2998fc6f-2073-4426-923c-7e6fe3386a3c"]}[Data],
+				    CRM_Country_ = #"2998fc6f-2073-4426-923c-7e6fe3386a3c"{[entity="CRM_Country",version=""]}[Data]
+				in
+				    CRM_Country_
+

@@ -1,0 +1,23 @@
+table CRM_DB_Name
+	lineageTag: 6ee028a2-b7ec-4dba-9697-b64e7531826b
+
+	column DBName
+		dataType: string
+		lineageTag: dc05bb86-8072-42b7-8faf-4dee5c27d222
+		summarizeBy: none
+		sourceColumn: DBName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CRM_DB_Name = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    #"4a0f34fa-bad3-4e18-9a9e-c0d9d59b232d" = Workspaces{[workspaceId="4a0f34fa-bad3-4e18-9a9e-c0d9d59b232d"]}[Data],
+				    #"2998fc6f-2073-4426-923c-7e6fe3386a3c" = #"4a0f34fa-bad3-4e18-9a9e-c0d9d59b232d"{[dataflowId="2998fc6f-2073-4426-923c-7e6fe3386a3c"]}[Data],
+				    CRM_DB_Name_ = #"2998fc6f-2073-4426-923c-7e6fe3386a3c"{[entity="CRM_DB_Name",version=""]}[Data]
+				in
+				    CRM_DB_Name_
+

@@ -1,0 +1,14 @@
+expression Workspace = "Trutesta Sandbox" meta [IsParameterQuery=true, List={"Trutesta QA", "Trutesta Sandbox", "Trutesta Production"}, DefaultValue="Trutesta Sandbox", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 375a7c63-2e5f-4566-a072-ce076e74ebdf
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression Environment = "SemaTree" meta [IsParameterQuery=true, List={"SemaTree", "Intertek"}, DefaultValue="SemaTree", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: ad418ba5-e012-4543-8a10-9adfe5dcbc82
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

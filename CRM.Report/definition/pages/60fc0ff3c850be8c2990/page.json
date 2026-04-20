@@ -1,0 +1,47 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "60fc0ff3c850be8c2990",
+  "displayName": "Finance Details",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e94ad716c106db68dd3d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CRM_Finance_System"
+              }
+            },
+            "Property": "Finance System"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "d0a9caa3ae135d9b8a96",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "f6f282e090be44cae009",
+        "boundFilter": "e94ad716c106db68dd3d",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CRM_Finance_System"
+              }
+            },
+            "Property": "Finance System"
+          }
+        }
+      }
+    ]
+  }
+}
