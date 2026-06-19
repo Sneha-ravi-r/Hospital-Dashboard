@@ -1,0 +1,47 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Dataflow_Gen_2_Fresh",
+  "queryGroups": [],
+  "documentLocale": "en-IN",
+  "gatewayObjectId": "891e1d14-f031-4100-8979-91e6e003c5f3",
+  "queriesMetadata": {
+    "Customer": {
+      "queryId": "cce05de2-88cb-4301-bad4-6380ce3d4102",
+      "queryName": "Customer"
+    },
+    "Customer_Address": {
+      "queryId": "2ef2164a-0fcb-4c06-a2fb-754a50662d6a",
+      "queryName": "Customer_Address"
+    },
+    "Customer_Audit": {
+      "queryId": "daef7c49-11bb-4228-8e52-1d15da46b9c8",
+      "queryName": "Customer_Audit"
+    },
+    "Contact_Group": {
+      "queryId": "c3ce6906-f425-4f3d-921d-f67e0869b186",
+      "queryName": "Contact_Group"
+    },
+    "Customer_Role": {
+      "queryId": "125f89cf-5376-476e-9dbc-1a7fca68f99f",
+      "queryName": "Customer_Role"
+    },
+    "Customer_Scheme": {
+      "queryId": "2f8f4752-5a6c-42ab-95db-7238bbc293fe",
+      "queryName": "Customer_Scheme"
+    },
+    "Customer_Tag": {
+      "queryId": "9e155913-9e01-4f92-911c-434b69de1b44",
+      "queryName": "Customer_Tag"
+    }
+  },
+  "connections": [
+    {
+      "path": "localhost;gbs-trutesta-sandbox-prod",
+      "kind": "PostgreSQL",
+      "connectionId": "{\"ClusterId\":\"891e1d14-f031-4100-8979-91e6e003c5f3\",\"DatasourceId\":\"e2c28142-3f10-4999-a29b-68530dc78eeb\"}"
+    }
+  ]
+}

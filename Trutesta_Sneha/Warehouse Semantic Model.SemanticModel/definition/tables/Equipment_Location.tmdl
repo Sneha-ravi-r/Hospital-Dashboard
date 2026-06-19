@@ -1,0 +1,160 @@
+table Equipment_Location
+	lineageTag: 50f70e69-86fb-4739-8125-fd6056cd82fc
+	sourceLineageTag: [dbo].[Equipment_Location]
+
+	column id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f67b6abf-6342-4067-b39e-6ccaed4ab7b5
+		sourceLineageTag: id
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0382bd0d-433e-49df-af8e-2acc787c09dd
+		sourceLineageTag: tenant_id
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name_text
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: bf5a63c7-52bf-42b2-b906-3dee73e58032
+		sourceLineageTag: name_text
+		summarizeBy: none
+		sourceColumn: name_text
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3b34f8a9-4a1e-4eb2-98f5-da41b1225862
+		sourceLineageTag: description
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: cbc65d66-e489-4882-938f-57025118b5df
+		sourceLineageTag: status
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column geo_latitude
+		dataType: double
+		sourceProviderType: decimal(38, 6)
+		lineageTag: 7af05567-f958-4dfd-a3f2-ff753751f342
+		sourceLineageTag: geo_latitude
+		summarizeBy: sum
+		sourceColumn: geo_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column geo_longitude
+		dataType: double
+		sourceProviderType: decimal(38, 6)
+		lineageTag: 1c2e07c2-0a5c-49eb-8b55-ad30dde7eaa1
+		sourceLineageTag: geo_longitude
+		summarizeBy: sum
+		sourceColumn: geo_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: dcfecdcc-ec50-423a-9084-245b533a5c2c
+		sourceLineageTag: date_created
+		summarizeBy: none
+		sourceColumn: date_created
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: bde8198e-d0df-4a32-925e-13ef45e3aa25
+		sourceLineageTag: created_by_name
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 14e9e19d-63e9-4b2f-8ac1-c0f2939de519
+		sourceLineageTag: date_last_updated
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 23653503-b547-4494-af87-57a52337d1a7
+		sourceLineageTag: lastupdated_by_name
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column organization_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 55d520d2-22a0-4bec-89e6-611186e55574
+		sourceLineageTag: organization_id
+		summarizeBy: none
+		sourceColumn: organization_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_location_type_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8bb16da0-2267-488b-8555-656d298539e6
+		sourceLineageTag: equipment_location_type_id
+		summarizeBy: none
+		sourceColumn: equipment_location_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 84094280-1fe7-4c76-b6e5-d4225d29650c
+		sourceLineageTag: site_id
+		summarizeBy: none
+		sourceColumn: site_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Equipment_Location = entity
+		mode: directLake
+		source
+			entityName: Equipment_Location
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

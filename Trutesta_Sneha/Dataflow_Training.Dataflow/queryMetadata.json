@@ -1,0 +1,35 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Dataflow_Training",
+  "queryGroups": [],
+  "documentLocale": "en-IN",
+  "gatewayObjectId": "891e1d14-f031-4100-8979-91e6e003c5f3",
+  "queriesMetadata": {
+    "trutesta_standards standard": {
+      "queryId": "54c76554-c9f4-419d-b8e8-419c214c77ac",
+      "queryName": "trutesta_standards standard"
+    },
+    "trutesta_standards standard_audit": {
+      "queryId": "e204d58c-8592-42c0-b06a-151f0ed9a2d5",
+      "queryName": "trutesta_standards standard_audit"
+    },
+    "trutesta_standards standard_category": {
+      "queryId": "3ebdfb83-8ba5-4ade-89ad-869320063714",
+      "queryName": "trutesta_standards standard_category"
+    },
+    "trutesta_standards standard_delivery_organization": {
+      "queryId": "21775560-e2bc-4e55-9006-0b5c404742cd",
+      "queryName": "trutesta_standards standard_delivery_organization"
+    }
+  },
+  "connections": [
+    {
+      "path": "localhost;gbs-trutesta-sandbox-prod",
+      "kind": "PostgreSQL",
+      "connectionId": "{\"ClusterId\":\"891e1d14-f031-4100-8979-91e6e003c5f3\",\"DatasourceId\":\"e2c28142-3f10-4999-a29b-68530dc78eeb\"}"
+    }
+  ]
+}

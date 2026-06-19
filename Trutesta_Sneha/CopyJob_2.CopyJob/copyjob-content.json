@@ -1,0 +1,154 @@
+{
+  "properties": {
+    "jobMode": "Batch",
+    "source": {
+      "type": "LakehouseTable",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "artifactId": "171a82f3-d57d-a475-4e5d-e6479c9bbf2a",
+          "rootFolder": "Tables"
+        }
+      }
+    },
+    "destination": {
+      "type": "LakehouseTable",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "artifactId": "171a82f3-d57d-a475-4e5d-e6479c9bbf2a",
+          "rootFolder": "Tables"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00",
+      "retry": 0
+    }
+  },
+  "activities": [
+    {
+      "id": "f904d094-5999-4898-a8bb-6b62058074f6",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "products"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "writeBehavior": "Append",
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "products"
+          },
+          "applyVOrder": false
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator",
+          "mappings": [
+            {
+              "source": {
+                "name": "Product_ID",
+                "type": "Int32",
+                "physicalType": "integer"
+              },
+              "destination": {
+                "name": "Product_ID",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "Product_Name",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "Product_Name",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "Price",
+                "type": "Double",
+                "physicalType": "double"
+              },
+              "destination": {
+                "name": "Price",
+                "physicalType": "double"
+              }
+            },
+            {
+              "source": {
+                "name": "Description",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "Description",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "Features",
+                "type": "String",
+                "physicalType": "string"
+              },
+              "destination": {
+                "name": "Features",
+                "physicalType": "string"
+              }
+            }
+          ]
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "7f1e1084-8558-4cd7-a67a-71c808250766",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "sales_corrected"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "writeBehavior": "Append",
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "sales_corrected"
+          },
+          "applyVOrder": false
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}

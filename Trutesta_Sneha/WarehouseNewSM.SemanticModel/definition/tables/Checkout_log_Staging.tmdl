@@ -1,0 +1,259 @@
+table Checkout_log_Staging
+	lineageTag: 6c781a6d-5072-48b0-83f6-1e5f75cb3ccc
+	sourceLineageTag: [dbo].[Checkout_log_Staging]
+
+	column tenant_id
+		dataType: string
+		lineageTag: 8b09503e-945a-449f-a1a3-98176dfe77f5
+		sourceLineageTag: tenant_id
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_id
+		dataType: string
+		lineageTag: c0e5d422-a3d2-4df2-967c-04e638133d56
+		sourceLineageTag: equipment_id
+		summarizeBy: none
+		sourceColumn: equipment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkout_type_id
+		dataType: string
+		lineageTag: 2d599308-338c-4753-9c62-3643517f9a48
+		sourceLineageTag: checkout_type_id
+		summarizeBy: none
+		sourceColumn: checkout_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_user_id
+		dataType: string
+		lineageTag: b5c876db-1db8-4f1d-b6b7-7f4094ed15ef
+		sourceLineageTag: tenant_user_id
+		summarizeBy: none
+		sourceColumn: tenant_user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_user_name
+		dataType: string
+		lineageTag: c07a4027-c798-4b58-9238-1d16f54bd146
+		sourceLineageTag: tenant_user_name
+		summarizeBy: none
+		sourceColumn: tenant_user_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column checked_in_user_name
+		dataType: string
+		lineageTag: d683e32e-66fe-485f-af32-5bef43bc5111
+		sourceLineageTag: checked_in_user_name
+		summarizeBy: none
+		sourceColumn: checked_in_user_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_of_check_in
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ea695fc8-ac65-405b-b43a-b5bfa207c6e4
+		sourceLineageTag: date_of_check_in
+		summarizeBy: none
+		sourceColumn: date_of_check_in
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 73069780-b90c-4ae0-a3e0-92f9982cfe77
+		sourceLineageTag: date_created
+		summarizeBy: none
+		sourceColumn: date_created
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: 6998b038-d73c-465e-b49b-b77c18829941
+		sourceLineageTag: created_by_name
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8405121a-bd58-4afd-b0d6-e0163c51bbcf
+		sourceLineageTag: date_last_updated
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: c2942b1d-4d20-40ca-ab1b-9179f9c4bc42
+		sourceLineageTag: lastupdated_by_name
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_in_condition_id
+		dataType: string
+		lineageTag: 56f562ef-8f90-42c6-ada7-ae6b275c6634
+		sourceLineageTag: check_in_condition_id
+		summarizeBy: none
+		sourceColumn: check_in_condition_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_out_condition_id
+		dataType: string
+		lineageTag: e718b963-f345-4345-b5d9-99aa476a8d81
+		sourceLineageTag: check_out_condition_id
+		summarizeBy: none
+		sourceColumn: check_out_condition_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkout_comment
+		dataType: string
+		lineageTag: 24039341-b02e-4986-82d2-de8bb0ffeb8b
+		sourceLineageTag: checkout_comment
+		summarizeBy: none
+		sourceColumn: checkout_comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkin_comment
+		dataType: string
+		lineageTag: 19a5bf7e-8b82-48c2-a671-f8912eb1b5e2
+		sourceLineageTag: checkin_comment
+		summarizeBy: none
+		sourceColumn: checkin_comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration
+		dataType: int64
+		formatString: 0
+		lineageTag: 210733b6-171d-4c52-b4e9-36915bb52b9d
+		sourceLineageTag: duration
+		summarizeBy: sum
+		sourceColumn: duration
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration_unit
+		dataType: string
+		lineageTag: e7a026cf-7859-4d14-8c9e-42136e4a1c3e
+		sourceLineageTag: duration_unit
+		summarizeBy: none
+		sourceColumn: duration_unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_estimated_checkin
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3d996101-6e0e-45df-bb6f-352871f519e3
+		sourceLineageTag: date_estimated_checkin
+		summarizeBy: none
+		sourceColumn: date_estimated_checkin
+
+		annotation SummarizationSetBy = Automatic
+
+	column reference_identifier
+		dataType: string
+		lineageTag: 7582638e-2e5f-4de8-bcc4-ec82f88012a5
+		sourceLineageTag: reference_identifier
+		summarizeBy: none
+		sourceColumn: reference_identifier
+
+		annotation SummarizationSetBy = Automatic
+
+	column reference_id
+		dataType: string
+		lineageTag: 8e3f1d30-9b3e-45c5-a208-2273beca631e
+		sourceLineageTag: reference_id
+		summarizeBy: none
+		sourceColumn: reference_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column reference_type
+		dataType: string
+		lineageTag: 5d594241-eeaa-43d8-88db-8b693c51c39b
+		sourceLineageTag: reference_type
+		summarizeBy: none
+		sourceColumn: reference_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column resource_id
+		dataType: string
+		lineageTag: 0e1c8909-0070-4933-b51a-8d65f180e604
+		sourceLineageTag: resource_id
+		summarizeBy: none
+		sourceColumn: resource_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column about_path
+		dataType: string
+		lineageTag: 951a027d-d93b-404d-8865-f26dd6fd6f35
+		sourceLineageTag: about_path
+		summarizeBy: none
+		sourceColumn: about_path
+
+		annotation SummarizationSetBy = Automatic
+
+	column assigned_by_tenant_user_id
+		dataType: string
+		lineageTag: 36783f90-8f57-43b2-972f-1bea20ad696a
+		sourceLineageTag: assigned_by_tenant_user_id
+		summarizeBy: none
+		sourceColumn: assigned_by_tenant_user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column assigned_by_tenant_user_name
+		dataType: string
+		lineageTag: c8b194d8-2d54-4095-a5e1-0b607dd4c5b7
+		sourceLineageTag: assigned_by_tenant_user_name
+		summarizeBy: none
+		sourceColumn: assigned_by_tenant_user_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column document_upload_policy_id
+		dataType: string
+		lineageTag: 1f8daa87-0396-4d7c-ad28-daab4153d8ce
+		sourceLineageTag: document_upload_policy_id
+		summarizeBy: none
+		sourceColumn: document_upload_policy_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_movement_id
+		dataType: string
+		lineageTag: a1c529bc-6897-431e-9196-eef62d09d2e4
+		sourceLineageTag: equipment_movement_id
+		summarizeBy: none
+		sourceColumn: equipment_movement_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Checkout_log_Staging = entity
+		mode: directLake
+		source
+			entityName: Checkout_log_Staging
+			schemaName: dbo
+			expressionSource: 'DirectLake - WarehouseNew'
+

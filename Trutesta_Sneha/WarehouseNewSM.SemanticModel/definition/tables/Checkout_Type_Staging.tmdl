@@ -1,0 +1,131 @@
+table Checkout_Type_Staging
+	lineageTag: 1a85fb7e-a57c-4651-ac16-1d567c0bddb9
+	sourceLineageTag: [dbo].[Checkout_Type_Staging]
+
+	column id
+		dataType: string
+		lineageTag: 577fad6e-e096-4ee0-9119-cf13e2ab2eb4
+		sourceLineageTag: id
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: fe2ce224-9982-4ac1-bc93-45aad5310b7b
+		sourceLineageTag: tenant_id
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name_text
+		dataType: string
+		lineageTag: 26e2c613-b245-40a5-9d0d-1f276069d1b1
+		sourceLineageTag: name_text
+		summarizeBy: none
+		sourceColumn: name_text
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_code
+		dataType: string
+		lineageTag: a75b1d34-b223-41ad-a68c-00b4e3a10137
+		sourceLineageTag: business_code
+		summarizeBy: none
+		sourceColumn: business_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 494a3568-033d-4e06-bb41-dd744cbef139
+		sourceLineageTag: description
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		lineageTag: bbb7bbd0-6920-4251-a495-55245314828a
+		sourceLineageTag: status
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkin_checklist_id
+		dataType: string
+		lineageTag: be2e56e2-0726-4851-9cce-57458a874f8f
+		sourceLineageTag: checkin_checklist_id
+		summarizeBy: none
+		sourceColumn: checkin_checklist_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column placeholder_template_group_id
+		dataType: string
+		lineageTag: 5b1af1da-1962-447a-b1f8-ee9757735388
+		sourceLineageTag: placeholder_template_group_id
+		summarizeBy: none
+		sourceColumn: placeholder_template_group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 88870658-0b8a-4c06-825c-f092f51f2d3b
+		sourceLineageTag: date_created
+		summarizeBy: none
+		sourceColumn: date_created
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: 3dc3edab-2bd8-4703-ad6f-aa25a9ebc9a9
+		sourceLineageTag: created_by_name
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dd7ff8a6-6636-48a1-8d43-7638921b0686
+		sourceLineageTag: date_last_updated
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: e6346c4c-02be-4e05-b04f-063ec90a5845
+		sourceLineageTag: lastupdated_by_name
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column document_upload_policy_id
+		dataType: string
+		lineageTag: 3778774a-31cd-4ee0-abba-d4856416ba62
+		sourceLineageTag: document_upload_policy_id
+		summarizeBy: none
+		sourceColumn: document_upload_policy_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Checkout_Type_Staging = entity
+		mode: directLake
+		source
+			entityName: Checkout_Type_Staging
+			schemaName: dbo
+			expressionSource: 'DirectLake - WarehouseNew'
+

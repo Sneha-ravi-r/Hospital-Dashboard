@@ -1,0 +1,199 @@
+table Calibration_Category
+	lineageTag: 0c7a5b53-c2c7-4cf1-87b9-694a6f30ea35
+	sourceLineageTag: [dbo].[Calibration_Category]
+
+	column id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6b696019-c271-4a21-8ac9-be451eeb000c
+		sourceLineageTag: id
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ff5cf978-5810-4ab2-8c4d-e2d2b5847482
+		sourceLineageTag: tenant_id
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name_text
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 28b554aa-08df-433f-a34f-a2f5ba27eda6
+		sourceLineageTag: name_text
+		summarizeBy: none
+		sourceColumn: name_text
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_code
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 33a4b5a0-2640-48f5-a267-07a787963a22
+		sourceLineageTag: business_code
+		summarizeBy: none
+		sourceColumn: business_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 47fb789d-9f05-4487-bb4a-b1318460d6ff
+		sourceLineageTag: description
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 443e9581-b691-4b89-8025-23fc262590e9
+		sourceLineageTag: status
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 260a8aa7-1b20-4fb3-97bc-2ec9a0951fff
+		sourceLineageTag: date_created
+		summarizeBy: none
+		sourceColumn: date_created
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 25f14c39-5539-4091-ac0e-75447ef80ca9
+		sourceLineageTag: created_by_name
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c49581f9-957d-46c8-bcf3-dbcfa342cce6
+		sourceLineageTag: date_last_updated
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c4067629-a2db-4ea5-8273-8cc1d5e7409a
+		sourceLineageTag: lastupdated_by_name
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column calibration_source
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6f796f99-115e-4087-8322-7ec01dc29a7b
+		sourceLineageTag: calibration_source
+		summarizeBy: none
+		sourceColumn: calibration_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column calibration_frequency
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 061ddf2c-d55d-457a-bd19-d4d573098369
+		sourceLineageTag: calibration_frequency
+		summarizeBy: none
+		sourceColumn: calibration_frequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column verify_before_use
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: da18a22b-563b-464f-923a-27bcfc59de11
+		sourceLineageTag: verify_before_use
+		summarizeBy: sum
+		sourceColumn: verify_before_use
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_calibration_interval
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a491e67d-a157-40ac-9a73-d09a64b2469f
+		sourceLineageTag: max_calibration_interval
+		summarizeBy: sum
+		sourceColumn: max_calibration_interval
+
+		annotation SummarizationSetBy = Automatic
+
+	column calibration_service_type_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3dd5cb21-8cac-456f-a539-94efc82c6db6
+		sourceLineageTag: calibration_service_type_id
+		summarizeBy: none
+		sourceColumn: calibration_service_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column requires_calibration
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: cc4ddaf3-203a-4d57-bd12-58242a1b2af7
+		sourceLineageTag: requires_calibration
+		summarizeBy: sum
+		sourceColumn: requires_calibration
+
+		annotation SummarizationSetBy = Automatic
+
+	column placeholder_template_group_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 08b8cf72-2f6e-4bf0-a86a-9bb14d48d305
+		sourceLineageTag: placeholder_template_group_id
+		summarizeBy: none
+		sourceColumn: placeholder_template_group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_text
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7f6ce83e-4dee-46a1-ad27-c97f3856d623
+		sourceLineageTag: label_text
+		summarizeBy: none
+		sourceColumn: label_text
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calibration_Category = entity
+		mode: directLake
+		source
+			entityName: Calibration_Category
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

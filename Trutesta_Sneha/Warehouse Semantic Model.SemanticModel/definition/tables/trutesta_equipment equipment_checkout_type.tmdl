@@ -1,0 +1,146 @@
+table 'trutesta_equipment equipment_checkout_type'
+	lineageTag: e48cacd7-22db-4ef2-ba2f-96483dd3a5ad
+	sourceLineageTag: [dbo].[trutesta_equipment equipment_checkout_type]
+
+	column id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4b1bac72-cb0e-423b-9317-205248ffcf9b
+		sourceLineageTag: id
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d63a5641-9706-472b-8e61-6072f608a489
+		sourceLineageTag: tenant_id
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name_text
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 89bd4b5c-871f-4a89-8fb9-832953b05488
+		sourceLineageTag: name_text
+		summarizeBy: none
+		sourceColumn: name_text
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_code
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d7fdca8f-cb92-4b3d-bd44-cc460857eb2a
+		sourceLineageTag: business_code
+		summarizeBy: none
+		sourceColumn: business_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fc4978cc-4a5f-442a-a8c1-d0075f3162e9
+		sourceLineageTag: description
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d71e4949-6023-4d61-a79a-28c9567a798c
+		sourceLineageTag: status
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkin_checklist_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 20e72f67-2e12-41b7-82ac-93a079e8a9ca
+		sourceLineageTag: checkin_checklist_id
+		summarizeBy: none
+		sourceColumn: checkin_checklist_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column placeholder_template_group_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e8a579d5-3974-4630-9ac1-ed2d4ead5e43
+		sourceLineageTag: placeholder_template_group_id
+		summarizeBy: none
+		sourceColumn: placeholder_template_group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: dfc25bb0-2d85-44eb-b118-cc5c3036dd79
+		sourceLineageTag: date_created
+		summarizeBy: none
+		sourceColumn: date_created
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8a15decc-a10f-46c1-bac8-fdf75bca66c8
+		sourceLineageTag: created_by_name
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 8292edca-f8cf-4048-af23-210796ed94e3
+		sourceLineageTag: date_last_updated
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 30b53fc6-c65a-4fb5-b939-32d869b74853
+		sourceLineageTag: lastupdated_by_name
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column document_upload_policy_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 68e99718-d921-45b2-acd6-5c3accc33110
+		sourceLineageTag: document_upload_policy_id
+		summarizeBy: none
+		sourceColumn: document_upload_policy_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'trutesta_equipment equipment_checkout_type' = entity
+		mode: directLake
+		source
+			entityName: trutesta_equipment equipment_checkout_type
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,298 @@
+table Checkout_Log
+	lineageTag: d572ee1f-ca2a-4b5f-a9c7-3b0487aacdb7
+	sourceLineageTag: [dbo].[Checkout_Log]
+
+	column id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d369196d-d2a1-406a-add4-590e1c9b8d3c
+		sourceLineageTag: id
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ce9f91b4-4e2c-416c-9d91-9867d1e40afe
+		sourceLineageTag: tenant_id
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 894ea40b-19c9-48ed-92d3-9f6d6059b7d7
+		sourceLineageTag: equipment_id
+		summarizeBy: none
+		sourceColumn: equipment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkout_type_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 91fc5365-d615-4131-a8ef-3d44578b54e2
+		sourceLineageTag: checkout_type_id
+		summarizeBy: none
+		sourceColumn: checkout_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_user_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 01f91403-201c-4f8c-a876-ca78df66df68
+		sourceLineageTag: tenant_user_id
+		summarizeBy: none
+		sourceColumn: tenant_user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_user_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: cc14316a-b4f4-41cd-b0f0-6be29555e681
+		sourceLineageTag: tenant_user_name
+		summarizeBy: none
+		sourceColumn: tenant_user_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column checked_in_user_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: bac86e26-71eb-4412-8a15-43466308c18a
+		sourceLineageTag: checked_in_user_name
+		summarizeBy: none
+		sourceColumn: checked_in_user_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_of_check_in
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 6ab48b5b-9845-484f-ab7c-8af56c779fed
+		sourceLineageTag: date_of_check_in
+		summarizeBy: none
+		sourceColumn: date_of_check_in
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 2146912d-41f6-45a6-9a92-653781cfe001
+		sourceLineageTag: date_created
+		summarizeBy: none
+		sourceColumn: date_created
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 534841c5-cd6e-4af9-8f9c-006dff3a7b6c
+		sourceLineageTag: created_by_name
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: f8a7c9f3-e4e3-45e4-9b88-166403581d2f
+		sourceLineageTag: date_last_updated
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3aa3e1f6-7e26-4749-b7a3-eff0480c5900
+		sourceLineageTag: lastupdated_by_name
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_in_condition_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fda284c6-2c89-477b-9396-31e85a4bc107
+		sourceLineageTag: check_in_condition_id
+		summarizeBy: none
+		sourceColumn: check_in_condition_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_out_condition_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 63a498b3-e684-4c51-b3f9-0bc18d384d85
+		sourceLineageTag: check_out_condition_id
+		summarizeBy: none
+		sourceColumn: check_out_condition_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkout_comment
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: de93b770-355b-4c1e-9e07-32b60d2de122
+		sourceLineageTag: checkout_comment
+		summarizeBy: none
+		sourceColumn: checkout_comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkin_comment
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 29297320-08d3-4555-bed9-0254ed2f287a
+		sourceLineageTag: checkin_comment
+		summarizeBy: none
+		sourceColumn: checkin_comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0a1eabe6-09ed-40e0-9029-9bdc1928fa7d
+		sourceLineageTag: duration
+		summarizeBy: sum
+		sourceColumn: duration
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration_unit
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7995596a-0738-4080-bbbc-40a68ce9fd66
+		sourceLineageTag: duration_unit
+		summarizeBy: none
+		sourceColumn: duration_unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_estimated_checkin
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 431c48c8-fa38-4155-8b7a-e1e115f767e9
+		sourceLineageTag: date_estimated_checkin
+		summarizeBy: none
+		sourceColumn: date_estimated_checkin
+
+		annotation SummarizationSetBy = Automatic
+
+	column reference_identifier
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fda69981-b56a-4dca-bcb2-f0c21fa954e8
+		sourceLineageTag: reference_identifier
+		summarizeBy: none
+		sourceColumn: reference_identifier
+
+		annotation SummarizationSetBy = Automatic
+
+	column reference_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 24db5a6e-9c87-402b-9afd-15625daffb44
+		sourceLineageTag: reference_id
+		summarizeBy: none
+		sourceColumn: reference_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column reference_type
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8a282f5b-b5a6-48f6-9812-6e622f862644
+		sourceLineageTag: reference_type
+		summarizeBy: none
+		sourceColumn: reference_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column resource_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4f6adb8e-7657-491f-83a3-d93fd9753b2f
+		sourceLineageTag: resource_id
+		summarizeBy: none
+		sourceColumn: resource_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column about_path
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0267fd89-c913-4945-b00a-daf8c7d9777c
+		sourceLineageTag: about_path
+		summarizeBy: none
+		sourceColumn: about_path
+
+		annotation SummarizationSetBy = Automatic
+
+	column assigned_by_tenant_user_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4c28ec63-cc77-4334-a6e7-0aa33032d169
+		sourceLineageTag: assigned_by_tenant_user_id
+		summarizeBy: none
+		sourceColumn: assigned_by_tenant_user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column assigned_by_tenant_user_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ce1efa6e-3c6e-438e-99e8-f1af9a4fff95
+		sourceLineageTag: assigned_by_tenant_user_name
+		summarizeBy: none
+		sourceColumn: assigned_by_tenant_user_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column document_upload_policy_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f946746d-21a7-495b-9415-6f41504caf0c
+		sourceLineageTag: document_upload_policy_id
+		summarizeBy: none
+		sourceColumn: document_upload_policy_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_movement_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 41385583-f421-49ba-9761-bab97162bc47
+		sourceLineageTag: equipment_movement_id
+		summarizeBy: none
+		sourceColumn: equipment_movement_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Checkout_Log = entity
+		mode: directLake
+		source
+			entityName: Checkout_Log
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

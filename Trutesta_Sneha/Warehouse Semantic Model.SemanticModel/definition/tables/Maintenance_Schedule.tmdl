@@ -1,0 +1,221 @@
+table Maintenance_Schedule
+	lineageTag: d631b228-6f07-4b56-94ce-c53cea9d9f68
+	sourceLineageTag: [dbo].[Maintenance_Schedule]
+
+	column id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 22b79c88-cfee-4a01-a2cd-5609526b85ef
+		sourceLineageTag: id
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5e424001-ff10-4502-86e4-62e3adce4441
+		sourceLineageTag: tenant_id
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c118d459-3a60-46cf-a101-409600650644
+		sourceLineageTag: equipment_id
+		summarizeBy: none
+		sourceColumn: equipment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_type_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 788c112b-3dbd-47df-bf32-e44e2476ba7d
+		sourceLineageTag: service_type_id
+		summarizeBy: none
+		sourceColumn: service_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column frequency_unit
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 01b96f6a-52fe-4069-82d1-cb8cc5c8d700
+		sourceLineageTag: frequency_unit
+		summarizeBy: none
+		sourceColumn: frequency_unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column frequency
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: b7cf9ac0-e196-4edf-839c-8b5aa52f0e19
+		sourceLineageTag: frequency
+		summarizeBy: sum
+		sourceColumn: frequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column instructions
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6b9b676b-7b96-4700-abc5-de1884012624
+		sourceLineageTag: instructions
+		summarizeBy: none
+		sourceColumn: instructions
+
+		annotation SummarizationSetBy = Automatic
+
+	column display_order
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 885b88b6-4e3c-48b8-b255-c20264a7bada
+		sourceLineageTag: display_order
+		summarizeBy: sum
+		sourceColumn: display_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: b09090a6-1044-494e-bbac-62f92f698d45
+		sourceLineageTag: date_created
+		summarizeBy: none
+		sourceColumn: date_created
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5c56bf77-ea86-41a4-849a-20eda92f087a
+		sourceLineageTag: created_by_name
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: cf18737c-f133-498e-9112-3e0865b2a424
+		sourceLineageTag: date_last_updated
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 75476db1-9f23-432c-9640-a7ba1d471a44
+		sourceLineageTag: lastupdated_by_name
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_internal
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: cc50703e-2912-4032-8654-151638e6f93f
+		sourceLineageTag: is_internal
+		summarizeBy: sum
+		sourceColumn: is_internal
+
+		annotation SummarizationSetBy = Automatic
+
+	column oncomplete_document_upload_policy_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a321cd32-a95e-4265-9cc8-1df2364ff555
+		sourceLineageTag: oncomplete_document_upload_policy_id
+		summarizeBy: none
+		sourceColumn: oncomplete_document_upload_policy_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_calculated_service_due
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 6870b8c7-4e32-4727-af19-50957e80af5c
+		sourceLineageTag: date_calculated_service_due
+		summarizeBy: none
+		sourceColumn: date_calculated_service_due
+
+		annotation SummarizationSetBy = Automatic
+
+	column status_code
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 49520779-71a7-45e5-9ca4-10187eb6b485
+		sourceLineageTag: status_code
+		summarizeBy: none
+		sourceColumn: status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_vendor_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c2bdab83-ccfe-4776-924b-3564ba4398d0
+		sourceLineageTag: service_vendor_id
+		summarizeBy: none
+		sourceColumn: service_vendor_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_threshold
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e7759910-2f28-4eb9-aec5-929f5dd89768
+		sourceLineageTag: alert_threshold
+		summarizeBy: sum
+		sourceColumn: alert_threshold
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_calculated_alert
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: de122a12-3b93-4e32-bd65-2f50b7cef72b
+		sourceLineageTag: date_calculated_alert
+		summarizeBy: none
+		sourceColumn: date_calculated_alert
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_vendor_address_instance_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f1b6410c-631c-4db9-87d2-a2d6930ed7a1
+		sourceLineageTag: service_vendor_address_instance_id
+		summarizeBy: none
+		sourceColumn: service_vendor_address_instance_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Maintenance_Schedule = entity
+		mode: directLake
+		source
+			entityName: Maintenance_Schedule
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

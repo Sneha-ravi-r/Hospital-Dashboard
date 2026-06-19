@@ -1,0 +1,10 @@
+relationship ae9176e6-f31a-2d2c-ee86-75369870674d
+	fromColumn: E0quipment_Calibration.equipment_id
+	toColumn: Equipment.id
+
+relationship 4e6e7dfb-d057-cb72-0f54-ac8adfb39d69
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Equipment_Location.id
+	toColumn: Equipment.equipment_location_id
+
