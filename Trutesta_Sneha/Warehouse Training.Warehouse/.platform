@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "Warehouse Training",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "cef13efc-2c01-bdc3-4d01-9cb6c9bcf010"
+  }
+}

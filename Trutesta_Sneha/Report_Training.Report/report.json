@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.73\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY26SU05\",\"version\":{\"visual\":\"2.9.0\",\"report\":\"3.3.0\",\"page\":\"2.3.1\"},\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY26SU05",
+            "path": "BaseThemes/CY26SU05.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "54c9c4e898dbe260e783",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"4eeedf6a0ce24acfecf9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":154.06466751785774,\"y\":84.80623900065565,\"z\":0,\"width\":539.9330549708409,\"height\":384.45495013630557}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"products.Product_ID\"},{\"queryRef\":\"products.Product_Name\"},{\"queryRef\":\"Sum(sales_corrected.Quantity_Sold)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"products\",\"Type\":0},{\"Name\":\"s\",\"Entity\":\"sales_corrected\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Product_ID\"},\"Name\":\"products.Product_ID\",\"NativeReferenceName\":\"Product_ID\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Product_Name\"},\"Name\":\"products.Product_Name\",\"NativeReferenceName\":\"Product_Name\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Quantity_Sold\"}},\"Function\":0},\"Name\":\"Sum(sales_corrected.Quantity_Sold)\",\"NativeReferenceName\":\"Sum of Quantity_Sold\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 384.45,
+          "width": 539.93,
+          "x": 154.06,
+          "y": 84.81,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

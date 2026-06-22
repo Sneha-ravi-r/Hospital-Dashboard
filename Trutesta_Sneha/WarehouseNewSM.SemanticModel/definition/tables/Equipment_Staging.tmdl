@@ -1,0 +1,546 @@
+table Equipment_Staging
+	lineageTag: 9ed8ee26-8294-4b58-a54e-df65488fe64d
+	sourceLineageTag: [dbo].[Equipment_Staging]
+
+	column id
+		dataType: string
+		lineageTag: 15777ea0-c7f8-49dc-8a85-377834c63354
+		sourceLineageTag: id
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: 62fae1c3-4921-47ea-bc5a-26af5c641473
+		sourceLineageTag: tenant_id
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_type_id
+		dataType: string
+		lineageTag: 9157a0be-4e2f-4e8c-ab51-e03746ff792a
+		sourceLineageTag: equipment_type_id
+		summarizeBy: none
+		sourceColumn: equipment_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_location_id
+		dataType: string
+		lineageTag: 9a511f68-8203-4e05-994b-8f4184a07d46
+		sourceLineageTag: equipment_location_id
+		summarizeBy: none
+		sourceColumn: equipment_location_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column resource_id
+		dataType: string
+		lineageTag: 0f168453-93e0-41c4-b692-cdb5c2f3d3f9
+		sourceLineageTag: resource_id
+		summarizeBy: none
+		sourceColumn: resource_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name_text
+		dataType: string
+		lineageTag: 29f56d74-eeec-4086-90bd-9b74dee3c630
+		sourceLineageTag: name_text
+		summarizeBy: none
+		sourceColumn: name_text
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 6fa4568b-68c3-4427-b8b3-36067e0a1c20
+		sourceLineageTag: description
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		lineageTag: 951f4e34-f879-4769-892f-6aa2472df119
+		sourceLineageTag: status
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column manufacturer_name
+		dataType: string
+		lineageTag: 61f17829-98dc-4a23-94a1-6c41a7418718
+		sourceLineageTag: manufacturer_name
+		summarizeBy: none
+		sourceColumn: manufacturer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_no
+		dataType: string
+		lineageTag: 3f8f82f3-d76d-4820-abaf-7c7716fbcea3
+		sourceLineageTag: model_no
+		summarizeBy: none
+		sourceColumn: model_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column serial_no
+		dataType: string
+		lineageTag: 0b174d39-b8ec-462a-a2f2-c8f8d96185df
+		sourceLineageTag: serial_no
+		summarizeBy: none
+		sourceColumn: serial_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: deb79506-f7ff-45f5-b5a6-51bc11103bb4
+		sourceLineageTag: date_created
+		summarizeBy: none
+		sourceColumn: date_created
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: 75d810f6-ebc4-4f92-907f-710284c0333e
+		sourceLineageTag: created_by_name
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ee69fa8d-b73a-48a9-8ba7-4fc8bdd2893d
+		sourceLineageTag: date_last_updated
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: f687f5e2-8488-4e22-bd74-7b9897b60561
+		sourceLineageTag: lastupdated_by_name
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column about_path
+		dataType: string
+		lineageTag: ad0dd9a3-e8d0-4adf-8781-52b3a5921d54
+		sourceLineageTag: about_path
+		summarizeBy: none
+		sourceColumn: about_path
+
+		annotation SummarizationSetBy = Automatic
+
+	column organization_id
+		dataType: string
+		lineageTag: d8afde60-0fdf-4f81-9a12-972871ccd8a9
+		sourceLineageTag: organization_id
+		summarizeBy: none
+		sourceColumn: organization_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_active
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 598478af-9a66-4d44-9775-e80abce90469
+		sourceLineageTag: date_active
+		summarizeBy: none
+		sourceColumn: date_active
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_retired
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: abc56e29-8dbb-4558-aaef-f6a910aed6e7
+		sourceLineageTag: date_retired
+		summarizeBy: none
+		sourceColumn: date_retired
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_offline
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 253aba8b-5c94-41d0-a808-926f2a704533
+		sourceLineageTag: date_offline
+		summarizeBy: none
+		sourceColumn: date_offline
+
+		annotation SummarizationSetBy = Automatic
+
+	column in_trash
+		dataType: int64
+		formatString: 0
+		lineageTag: 3105b51e-6399-4609-88e1-6ad59aa62b59
+		sourceLineageTag: in_trash
+		summarizeBy: sum
+		sourceColumn: in_trash
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_alert_message
+		dataType: string
+		lineageTag: 712b7693-610e-4a92-a17c-85cc6dcca4bb
+		sourceLineageTag: service_alert_message
+		summarizeBy: none
+		sourceColumn: service_alert_message
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_usage
+		dataType: int64
+		formatString: 0
+		lineageTag: f13a9289-7f6a-4327-9f11-6df041756f88
+		sourceLineageTag: current_usage
+		summarizeBy: sum
+		sourceColumn: current_usage
+
+		annotation SummarizationSetBy = Automatic
+
+	column status_code
+		dataType: string
+		lineageTag: 10a8f962-38c1-4943-86fa-528a48e29b23
+		sourceLineageTag: status_code
+		summarizeBy: none
+		sourceColumn: status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column auto_recommend_maintenance
+		dataType: int64
+		formatString: 0
+		lineageTag: 981966e7-6a5f-4bcf-ae1d-e8dc00bf08ba
+		sourceLineageTag: auto_recommend_maintenance
+		summarizeBy: sum
+		sourceColumn: auto_recommend_maintenance
+
+		annotation SummarizationSetBy = Automatic
+
+	column asset_tag
+		dataType: string
+		lineageTag: 840a9ce4-b3a2-45a4-a7fb-c51671e85d1f
+		sourceLineageTag: asset_tag
+		summarizeBy: none
+		sourceColumn: asset_tag
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_load_job_id
+		dataType: string
+		lineageTag: 8fcefacf-a16a-45b0-b71f-5643ec2d6f30
+		sourceLineageTag: equipment_load_job_id
+		summarizeBy: none
+		sourceColumn: equipment_load_job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column no_of_equipment
+		dataType: int64
+		formatString: 0
+		lineageTag: 7382bf91-57e1-4cb0-a61f-ae80d858923f
+		sourceLineageTag: no_of_equipment
+		summarizeBy: sum
+		sourceColumn: no_of_equipment
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_key
+		dataType: int64
+		formatString: 0
+		lineageTag: e1dc23bc-d044-4527-b8d4-1785ae1d1613
+		sourceLineageTag: equipment_key
+		summarizeBy: sum
+		sourceColumn: equipment_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column verify_before_use
+		dataType: int64
+		formatString: 0
+		lineageTag: 22e086ae-d961-45b3-9aae-1781e732e2f6
+		sourceLineageTag: verify_before_use
+		summarizeBy: sum
+		sourceColumn: verify_before_use
+
+		annotation SummarizationSetBy = Automatic
+
+	column maintenance_schedule_state
+		dataType: string
+		lineageTag: 6ff4aa83-fa71-40df-9155-02a58a415283
+		sourceLineageTag: maintenance_schedule_state
+		summarizeBy: none
+		sourceColumn: maintenance_schedule_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column calibration_category_id
+		dataType: string
+		lineageTag: d67f90aa-706b-441e-ac29-49880ee347c7
+		sourceLineageTag: calibration_category_id
+		summarizeBy: none
+		sourceColumn: calibration_category_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_externally_managed
+		dataType: int64
+		formatString: 0
+		lineageTag: 30b48141-ec16-49b7-b4ef-53dbb465e425
+		sourceLineageTag: is_externally_managed
+		summarizeBy: sum
+		sourceColumn: is_externally_managed
+
+		annotation SummarizationSetBy = Automatic
+
+	column external_key
+		dataType: string
+		lineageTag: a915547c-d969-4536-8f40-0d1cf43d3a75
+		sourceLineageTag: external_key
+		summarizeBy: none
+		sourceColumn: external_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column requires_scan
+		dataType: int64
+		formatString: 0
+		lineageTag: df58390a-2652-4057-80f5-fb7e24a25d09
+		sourceLineageTag: requires_scan
+		summarizeBy: sum
+		sourceColumn: requires_scan
+
+		annotation SummarizationSetBy = Automatic
+
+	column available_timesheet
+		dataType: int64
+		formatString: 0
+		lineageTag: 89220f50-9ccb-47ec-a4f5-404fc05b4145
+		sourceLineageTag: available_timesheet
+		summarizeBy: sum
+		sourceColumn: available_timesheet
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_checkout_log_id
+		dataType: string
+		lineageTag: b1837617-f91e-490d-b122-fce3025fb337
+		sourceLineageTag: equipment_checkout_log_id
+		summarizeBy: none
+		sourceColumn: equipment_checkout_log_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_of_purchase
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ee99c47d-3d7e-4d6b-a952-5c7e0bce4156
+		sourceLineageTag: date_of_purchase
+		summarizeBy: none
+		sourceColumn: date_of_purchase
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_activation_rule_id
+		dataType: string
+		lineageTag: e2a673cc-429d-48c4-b173-911d6c5b6d05
+		sourceLineageTag: equipment_activation_rule_id
+		summarizeBy: none
+		sourceColumn: equipment_activation_rule_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_checkout_rule_id
+		dataType: string
+		lineageTag: 8f5f0244-4178-4441-a570-f83b717139b8
+		sourceLineageTag: equipment_checkout_rule_id
+		summarizeBy: none
+		sourceColumn: equipment_checkout_rule_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_checkin_rule_id
+		dataType: string
+		lineageTag: afed2c9d-59b5-4ab6-97ce-93293ec33d05
+		sourceLineageTag: equipment_checkin_rule_id
+		summarizeBy: none
+		sourceColumn: equipment_checkin_rule_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_calibration_rule_id
+		dataType: string
+		lineageTag: a4eb2b34-ca60-419e-a4dd-d7b470c30045
+		sourceLineageTag: equipment_calibration_rule_id
+		summarizeBy: none
+		sourceColumn: equipment_calibration_rule_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_share
+		dataType: int64
+		formatString: 0
+		lineageTag: f10e71c2-9503-42d1-bc8c-3939fba0c512
+		sourceLineageTag: site_share
+		summarizeBy: sum
+		sourceColumn: site_share
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_id
+		dataType: string
+		lineageTag: 98121a5b-1618-4679-b091-62307335a18b
+		sourceLineageTag: site_id
+		summarizeBy: none
+		sourceColumn: site_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column document_placeholder_template_group_id
+		dataType: string
+		lineageTag: 39547d96-872e-4b8f-aae3-4678067ab55f
+		sourceLineageTag: document_placeholder_template_group_id
+		summarizeBy: none
+		sourceColumn: document_placeholder_template_group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column track_software_versions
+		dataType: int64
+		formatString: 0
+		lineageTag: f57b1f4a-0015-4b48-8e56-0e84573cdde4
+		sourceLineageTag: track_software_versions
+		summarizeBy: sum
+		sourceColumn: track_software_versions
+
+		annotation SummarizationSetBy = Automatic
+
+	column software_version
+		dataType: string
+		lineageTag: 39ecf033-c71b-4751-97cd-d76f2d74e169
+		sourceLineageTag: software_version
+		summarizeBy: none
+		sourceColumn: software_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_service
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6d141c08-1b95-4119-9ee2-41a60cb704e6
+		sourceLineageTag: date_last_service
+		summarizeBy: none
+		sourceColumn: date_last_service
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_service_due
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4bbbad97-3fb6-47dc-9e6c-0961a3fb611c
+		sourceLineageTag: date_service_due
+		summarizeBy: none
+		sourceColumn: date_service_due
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_equipment_key
+		dataType: int64
+		formatString: 0
+		lineageTag: ab0d007e-2629-4a8c-84a7-7042564ea094
+		sourceLineageTag: site_equipment_key
+		summarizeBy: sum
+		sourceColumn: site_equipment_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column ext_equipment_key
+		dataType: int64
+		formatString: 0
+		lineageTag: c6124012-4e1e-48dd-8d4a-54f04887438b
+		sourceLineageTag: ext_equipment_key
+		summarizeBy: sum
+		sourceColumn: ext_equipment_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_piece_type
+		dataType: string
+		lineageTag: ce551f00-6ae1-478c-a1fb-3b6602481bd2
+		sourceLineageTag: equipment_piece_type
+		summarizeBy: none
+		sourceColumn: equipment_piece_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column parent_equipment_id
+		dataType: string
+		lineageTag: 720577a6-f0c0-4ae0-9bd5-6260ca4acaa3
+		sourceLineageTag: parent_equipment_id
+		summarizeBy: none
+		sourceColumn: parent_equipment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column department_id
+		dataType: string
+		lineageTag: c128df64-2dfa-44eb-b87b-ab710dfc39e0
+		sourceLineageTag: department_id
+		summarizeBy: none
+		sourceColumn: department_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column transfer_site_id
+		dataType: string
+		lineageTag: 1583815d-a487-453c-ba05-f2ffe73c7f08
+		sourceLineageTag: transfer_site_id
+		summarizeBy: none
+		sourceColumn: transfer_site_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column transfer_type
+		dataType: string
+		lineageTag: 6a6e15d0-1bc9-4771-ba59-a3d5ef9be29d
+		sourceLineageTag: transfer_type
+		summarizeBy: none
+		sourceColumn: transfer_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub_status_code
+		dataType: string
+		lineageTag: db3fec2d-9db3-45bd-88a5-982291642ac7
+		sourceLineageTag: sub_status_code
+		summarizeBy: none
+		sourceColumn: sub_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Equipment_Staging = entity
+		mode: directLake
+		source
+			entityName: Equipment_Staging
+			schemaName: dbo
+			expressionSource: 'DirectLake - WarehouseNew'
+

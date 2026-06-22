@@ -1,0 +1,47 @@
+table SQL_Query_Table
+	lineageTag: 545eef1a-fde1-4c34-ae0c-294b4e6d1cf3
+	sourceLineageTag: [dbo].[SQL_Query_Table]
+
+	column Transaction_ID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8e7643b6-c031-45f7-825a-920cdebd16f5
+		sourceLineageTag: Transaction_ID
+		summarizeBy: count
+		sourceColumn: Transaction_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_Price
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 017b18ef-f738-471f-8a81-d16cdb35b0c9
+		sourceLineageTag: Total_Price
+		summarizeBy: sum
+		sourceColumn: Total_Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Timestamp
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 073df361-5e6a-4afd-ab24-b154aadd3c2a
+		sourceLineageTag: Timestamp
+		summarizeBy: none
+		sourceColumn: Timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SQL_Query_Table = entity
+		mode: directLake
+		source
+			entityName: SQL_Query_Table
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

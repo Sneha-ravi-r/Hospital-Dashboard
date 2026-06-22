@@ -1,0 +1,65 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "c021078cddb402602154",
+  "position": {
+    "x": 634,
+    "y": 84,
+    "z": 12001,
+    "height": 318,
+    "width": 634
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipment_Staging"
+                    }
+                  },
+                  "Property": "id"
+                }
+              },
+              "queryRef": "Equipment_Staging.id",
+              "nativeQueryRef": "id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipment_Staging"
+                    }
+                  },
+                  "Property": "name_text"
+                }
+              },
+              "queryRef": "Equipment_Staging.name_text",
+              "nativeQueryRef": "name_text"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipment_Staging"
+                    }
+                  },
+                  "Property": "manufacturer_name"
+                }
+              },
+              "queryRef": "Equipment_Staging.manufacturer_name",
+              "nativeQueryRef": "manufacturer_name"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

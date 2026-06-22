@@ -1,0 +1,144 @@
+table Location
+	lineageTag: 89964af9-480f-4f34-af7f-580068c39a68
+	sourceLineageTag: [dbo].[Location]
+
+	column id
+		dataType: string
+		lineageTag: 658e5dba-ab03-4307-b97a-e2d814a6037b
+		sourceLineageTag: id
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: 4c6fd1da-d1df-482c-bc06-be8521dcf79e
+		sourceLineageTag: tenant_id
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name_text
+		dataType: string
+		lineageTag: 71ae3c2b-d507-4fc0-afd2-745cf729b200
+		sourceLineageTag: name_text
+		summarizeBy: none
+		sourceColumn: name_text
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: fc350a5f-51d9-4ba5-a9b5-3dad1ff345ff
+		sourceLineageTag: description
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a6bd3f0-916d-4f57-9618-cdf910e44dd3
+		sourceLineageTag: status
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column geo_latitude
+		dataType: double
+		lineageTag: 459a903c-6fb8-4013-9089-f5e6fea6d14c
+		sourceLineageTag: geo_latitude
+		summarizeBy: sum
+		sourceColumn: geo_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column geo_longitude
+		dataType: double
+		lineageTag: 4e725f17-87f1-4e3d-8d2f-1c28d5f6135e
+		sourceLineageTag: geo_longitude
+		summarizeBy: sum
+		sourceColumn: geo_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4deb552d-a1f3-445f-9d55-8de2063ef601
+		sourceLineageTag: date_created
+		summarizeBy: none
+		sourceColumn: date_created
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: 6650cdd2-c00c-4f30-94ef-19ca6b808c5d
+		sourceLineageTag: created_by_name
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 56fe876b-9a33-4aef-9c2f-df4a3f1e4013
+		sourceLineageTag: date_last_updated
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: 054cf5be-ee42-44be-96de-ae18e5ecdb99
+		sourceLineageTag: lastupdated_by_name
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column organization_id
+		dataType: string
+		lineageTag: 18444b3f-46ef-4d8c-9030-23ca79ba0a57
+		sourceLineageTag: organization_id
+		summarizeBy: none
+		sourceColumn: organization_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_location_type_id
+		dataType: string
+		lineageTag: a2a54517-ca4a-4ec6-9569-89212dbd4a0e
+		sourceLineageTag: equipment_location_type_id
+		summarizeBy: none
+		sourceColumn: equipment_location_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_id
+		dataType: string
+		lineageTag: 87d90383-381f-44bb-b604-eda42431126b
+		sourceLineageTag: site_id
+		summarizeBy: none
+		sourceColumn: site_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Location = entity
+		mode: directLake
+		source
+			entityName: Location
+			schemaName: dbo
+			expressionSource: 'DirectLake - Lakehouse_New'
+

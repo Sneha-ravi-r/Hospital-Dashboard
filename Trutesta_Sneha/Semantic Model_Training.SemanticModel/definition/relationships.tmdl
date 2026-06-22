@@ -1,0 +1,4 @@
+relationship aeb713f9-8f71-9d77-91d0-cf529d580e13
+	fromColumn: sales_corrected.Product_ID
+	toColumn: products.Product_ID
+

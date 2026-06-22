@@ -1,0 +1,62 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "DataflowWarehouse",
+  "queryGroups": [],
+  "documentLocale": "en-IN",
+  "gatewayObjectId": "891e1d14-f031-4100-8979-91e6e003c5f3",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "f0486306-149e-4e6a-98bb-39fe5ed473a3",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Calibration_Category": {
+      "queryId": "c5ddd30f-f81f-48a6-bef5-193708a72d94",
+      "queryName": "Calibration_Category"
+    },
+    "Equipment": {
+      "queryId": "06afcb83-c85e-4e04-858c-6ebf63e72452",
+      "queryName": "Equipment"
+    },
+    "E0quipment_Calibration": {
+      "queryId": "0c9cc5bb-45a9-4204-9a52-cc7f2d2f78a1",
+      "queryName": "E0quipment_Calibration"
+    },
+    "Checkout_Log": {
+      "queryId": "124bae44-6b28-46ab-9a7d-347d69328c65",
+      "queryName": "Checkout_Log"
+    },
+    "Checkout_Type": {
+      "queryId": "108381ab-c6b3-45bb-9cd0-61cb5c19a9a6",
+      "queryName": "Checkout_Type"
+    },
+    "Equipment_Location": {
+      "queryId": "7f5cc113-5b15-4594-844e-9a41bc3027a6",
+      "queryName": "Equipment_Location"
+    },
+    "Maintenance_Schedule": {
+      "queryId": "0bce3c74-fb15-44e1-b1dd-819fa75ab8a7",
+      "queryName": "Maintenance_Schedule"
+    },
+    "Service_Type": {
+      "queryId": "db1271e5-6737-42cc-a48b-17e9ab3e0407",
+      "queryName": "Service_Type"
+    }
+  },
+  "connections": [
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"85e700be-b1f6-4afe-8e9a-b6e88e3772dd\",\"DatasourceId\":\"ee5246d7-45db-41d1-bc50-75d694d6b552\"}"
+    },
+    {
+      "path": "localhost;gbs-trutesta-sandbox-prod",
+      "kind": "PostgreSQL",
+      "connectionId": "{\"ClusterId\":\"891e1d14-f031-4100-8979-91e6e003c5f3\",\"DatasourceId\":\"e2c28142-3f10-4999-a29b-68530dc78eeb\"}"
+    }
+  ]
+}

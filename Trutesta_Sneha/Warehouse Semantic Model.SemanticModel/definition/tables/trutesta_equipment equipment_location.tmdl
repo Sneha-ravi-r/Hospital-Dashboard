@@ -1,0 +1,160 @@
+table 'trutesta_equipment equipment_location'
+	lineageTag: 4bae0036-07d7-4271-a63f-e93936549a5b
+	sourceLineageTag: [dbo].[trutesta_equipment equipment_location]
+
+	column id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d115cc4d-ebcc-4fbd-9006-0cc120a6b907
+		sourceLineageTag: id
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 50fc53d5-9d31-4fd7-9085-901cca7eb517
+		sourceLineageTag: tenant_id
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name_text
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7bb6f8e6-984d-46e5-80d8-38e059d7cf89
+		sourceLineageTag: name_text
+		summarizeBy: none
+		sourceColumn: name_text
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 357b69f9-d4cc-48a7-95e3-82f60cacd46b
+		sourceLineageTag: description
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a4451a6c-c247-42a0-b62a-432b8559e0e3
+		sourceLineageTag: status
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column geo_latitude
+		dataType: double
+		sourceProviderType: decimal(38, 6)
+		lineageTag: e08b66bf-3a0f-4968-9f91-97f8bf0d979a
+		sourceLineageTag: geo_latitude
+		summarizeBy: sum
+		sourceColumn: geo_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column geo_longitude
+		dataType: double
+		sourceProviderType: decimal(38, 6)
+		lineageTag: 2a6e7f00-967e-4036-81e5-2f4d265da39c
+		sourceLineageTag: geo_longitude
+		summarizeBy: sum
+		sourceColumn: geo_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: eed24f6d-a457-4e83-901c-a3b4d3cf27c4
+		sourceLineageTag: date_created
+		summarizeBy: none
+		sourceColumn: date_created
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 75c0e506-3d8b-41a4-8da2-e4cc7beaaa2a
+		sourceLineageTag: created_by_name
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c775c013-b925-4b36-868c-103d6a435079
+		sourceLineageTag: date_last_updated
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 285ff1f6-f529-4b3d-b76f-a60ef6d2ac9b
+		sourceLineageTag: lastupdated_by_name
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column organization_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 91073b46-65bc-4246-87c2-34f98d7af3ad
+		sourceLineageTag: organization_id
+		summarizeBy: none
+		sourceColumn: organization_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_location_type_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ca0dee45-d899-4d6a-b6f3-c9361c506cb7
+		sourceLineageTag: equipment_location_type_id
+		summarizeBy: none
+		sourceColumn: equipment_location_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: dee6b0b4-f05b-4333-bf0a-b28ade76ce8a
+		sourceLineageTag: site_id
+		summarizeBy: none
+		sourceColumn: site_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'trutesta_equipment equipment_location' = entity
+		mode: directLake
+		source
+			entityName: trutesta_equipment equipment_location
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
