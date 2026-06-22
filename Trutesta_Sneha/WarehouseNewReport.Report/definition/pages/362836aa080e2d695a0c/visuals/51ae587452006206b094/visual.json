@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "51ae587452006206b094",
+  "position": {
+    "x": 640.17433941705258,
+    "y": 401.678016889131,
+    "z": 12002,
+    "height": 306.27948787796237,
+    "width": 311.30046308907652
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Location_Staging"
+                    }
+                  },
+                  "Property": "equipment_location_type_id"
+                }
+              },
+              "queryRef": "Location_Staging.equipment_location_type_id",
+              "nativeQueryRef": "equipment_location_type_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Location_Staging"
+                    }
+                  },
+                  "Property": "description"
+                }
+              },
+              "queryRef": "Location_Staging.description",
+              "nativeQueryRef": "description"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

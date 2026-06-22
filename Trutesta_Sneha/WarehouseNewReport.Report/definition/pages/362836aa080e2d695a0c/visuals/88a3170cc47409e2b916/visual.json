@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Warehouse_New_Dashboard",
+                    "value": "WarehouseNewDashboard",
                     "textStyle": {
                       "fontSize": "12pt",
                       "color": "#605e5c"
