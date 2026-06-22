@@ -1,0 +1,116 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "09a37223d907af44f208",
+  "position": {
+    "x": 276.07508986819334,
+    "y": 88.34402875782186,
+    "z": 1000,
+    "height": 104.29503395020636,
+    "width": 966.87631473838371,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Maintenance_Schedule"
+                    }
+                  },
+                  "Property": "Total Calibration"
+                }
+              },
+              "queryRef": "Maintenance Schedule (2).Total Cal",
+              "nativeQueryRef": "Total Calibration"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Maintenance_Schedule"
+                    }
+                  },
+                  "Property": "Total Maintenance"
+                }
+              },
+              "queryRef": "Maintenance Schedule (2).Total Main",
+              "nativeQueryRef": "Total Maintenance"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipment"
+                    }
+                  },
+                  "Property": "Total Equipment"
+                }
+              },
+              "queryRef": "Equipment.Total Equipment",
+              "nativeQueryRef": "Total Equipment"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Maintenance_Schedule"
+                  }
+                },
+                "Property": "Total Calibration"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "showBlankAs": {
+              "expr": {
+                "Literal": {
+                  "Value": "'0'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Equipment.Total Equipment"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

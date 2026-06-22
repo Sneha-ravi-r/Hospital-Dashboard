@@ -1,0 +1,352 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "4044553b8dfa37f172af",
+  "position": {
+    "x": 276.33401221995928,
+    "y": 237.23014256619143,
+    "z": 4000,
+    "height": 444.48065173116089,
+    "width": 911.12016293279021,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipment"
+                    }
+                  },
+                  "Property": "id"
+                }
+              },
+              "queryRef": "Equipment.id",
+              "nativeQueryRef": "Equipment ID",
+              "displayName": "Equipment ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipment"
+                    }
+                  },
+                  "Property": "Name"
+                }
+              },
+              "queryRef": "Equipment.Name",
+              "nativeQueryRef": "Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Department"
+                    }
+                  },
+                  "Property": "Department"
+                }
+              },
+              "queryRef": "Department.Department",
+              "nativeQueryRef": "Dept",
+              "displayName": "Dept"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Maintenance_Schedule"
+                    }
+                  },
+                  "Property": "Service_Type"
+                }
+              },
+              "queryRef": "Maintenance_Schedule.Service_Type",
+              "nativeQueryRef": "Service Type",
+              "displayName": "Service Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipment"
+                    }
+                  },
+                  "Property": "model_no"
+                }
+              },
+              "queryRef": "Equipment.model_no",
+              "nativeQueryRef": "Model No:",
+              "displayName": "Model No:"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Maintenance_Schedule"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "queryRef": "Maintenance_Schedule.Status",
+              "nativeQueryRef": "Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Maintenance_Schedule"
+                    }
+                  },
+                  "Property": "date_calculated_service_due"
+                }
+              },
+              "queryRef": "Maintenance_Schedule.date_calculated_service_due",
+              "nativeQueryRef": "Service Due Date",
+              "displayName": "Service Due Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Maintenance_Schedule"
+                    }
+                  },
+                  "Property": "Date_Service_Completed"
+                }
+              },
+              "queryRef": "Maintenance_Schedule.Date_Service_Completed",
+              "nativeQueryRef": "Service Completed Date",
+              "displayName": "Service Completed Date"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Equipment"
+                  }
+                },
+                "Property": "Name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "180.36841722231776D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Equipment.Name"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d2335fd5b446ff4f4fcd",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Maintenance_Schedule"
+              }
+            },
+            "Property": "date_calculated_service_due"
+          }
+        },
+        "type": "RelativeDate"
+      },
+      {
+        "name": "7776ef503a6266cc7c14",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Maintenance_Schedule"
+              }
+            },
+            "Property": "Calibration within 60 days Column"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "Maintenance_Schedule",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "m"
+                        }
+                      },
+                      "Property": "Calibration within 60 days Column"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "1L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "9d1a9c6efa528ccb29d0",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Maintenance_Schedule"
+              }
+            },
+            "Property": "Date_Service_Completed"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "35dfdddb81ed9f600157",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Department"
+              }
+            },
+            "Property": "Department"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1e2e521cc087275a160e",
+        "ordinal": 4,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Equipment"
+              }
+            },
+            "Property": "id"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c199686645fc87aaa1ae",
+        "ordinal": 5,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Equipment"
+              }
+            },
+            "Property": "model_no"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "43f8d3e50e0d581f4724",
+        "ordinal": 6,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Equipment"
+              }
+            },
+            "Property": "Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "73969784e40c47a778a3",
+        "ordinal": 7,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Maintenance_Schedule"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "73d4eba9ba1644d15c2a",
+        "ordinal": 8,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Maintenance_Schedule"
+              }
+            },
+            "Property": "Service_Type"
+          }
+        },
+        "type": "Categorical"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

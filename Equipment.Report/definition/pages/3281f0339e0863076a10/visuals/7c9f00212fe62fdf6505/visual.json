@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "7c9f00212fe62fdf6505",
+  "position": {
+    "x": 276.33401221995928,
+    "y": 88.635437881873727,
+    "z": 5000,
+    "height": 99.063136456211808,
+    "width": 911.12016293279021,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Maintenance_Schedule"
+                    }
+                  },
+                  "Property": "Cal Within 60 days"
+                }
+              },
+              "queryRef": "Maintenance_Schedule.Cal Within 60 days",
+              "nativeQueryRef": "Due in 60 days",
+              "displayName": "Due in 60 days"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Department"
+                        }
+                      },
+                      "Property": "Department"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(Department.Department)",
+              "nativeQueryRef": "Department",
+              "displayName": "Department"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calibration"
+                        }
+                      },
+                      "Property": "Service_Type"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(Calibration.Service_Type)",
+              "nativeQueryRef": "Service Type",
+              "displayName": "Service Type"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Maintenance_Schedule"
+                  }
+                },
+                "Property": "Cal Within 60 days"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "showBlankAs": {
+              "expr": {
+                "Literal": {
+                  "Value": "'0'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

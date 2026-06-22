@@ -1,0 +1,200 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "da84ecfb1a20f0d903b8",
+  "position": {
+    "x": 275.11604439959638,
+    "y": 237.65893037336025,
+    "z": 4000,
+    "height": 467.56811301715442,
+    "width": 874.42986881937441,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Checkout_log"
+                    }
+                  },
+                  "Property": "id"
+                }
+              },
+              "queryRef": "Checkout_log.id",
+              "nativeQueryRef": "ID",
+              "displayName": "ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Checkout_log"
+                    }
+                  },
+                  "Property": "date_created"
+                }
+              },
+              "queryRef": "Checkout_log.date_created",
+              "nativeQueryRef": "Date Created",
+              "displayName": "Date Created"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Checkout_log"
+                    }
+                  },
+                  "Property": "checkin_comment"
+                }
+              },
+              "queryRef": "Checkout_log.checkin_comment",
+              "nativeQueryRef": "Check In Comment",
+              "displayName": "Check In Comment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Checkout_log"
+                    }
+                  },
+                  "Property": "checkout_comment"
+                }
+              },
+              "queryRef": "Checkout_log.checkout_comment",
+              "nativeQueryRef": "Check Out Comment",
+              "displayName": "Check Out Comment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Checkout_log"
+                    }
+                  },
+                  "Property": "date_estimated_checkin"
+                }
+              },
+              "queryRef": "Checkout_log.date_estimated_checkin",
+              "nativeQueryRef": "Date-Estimated-Checkin",
+              "displayName": "Date-Estimated-Checkin"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Checkout_log"
+                    }
+                  },
+                  "Property": "date_of_check_in"
+                }
+              },
+              "queryRef": "Checkout_log.date_of_check_in",
+              "nativeQueryRef": "Date Checked-In",
+              "displayName": "Date Checked-In"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Checkout_log"
+                    }
+                  },
+                  "Property": "Days Late Being Returned"
+                }
+              },
+              "queryRef": "Sum(Checkout_log.Days Late Being Returned)",
+              "nativeQueryRef": "Late Being Returned",
+              "displayName": "Late Being Returned"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9d1a9c6efa528ccb29d0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Maintenance_Schedule"
+              }
+            },
+            "Property": "Date_Service_Completed"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "c7e332aa77cd0922cbc0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Checkout_log"
+              }
+            },
+            "Property": "Days Late Being Returned"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c1",
+              "Entity": "Checkout_log",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "c1"
+                            }
+                          },
+                          "Property": "Days Late Being Returned"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

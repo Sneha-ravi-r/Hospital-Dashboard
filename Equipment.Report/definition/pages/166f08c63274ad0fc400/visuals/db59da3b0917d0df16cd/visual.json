@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "db59da3b0917d0df16cd",
+  "position": {
+    "x": 276.12903225806451,
+    "y": 73.548387096774192,
+    "z": 5000,
+    "height": 118.70967741935483,
+    "width": 901.93548387096769,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Maintenance_Schedule"
+                    }
+                  },
+                  "Property": "Due Count"
+                }
+              },
+              "queryRef": "Maintenance_Schedule.Due Count",
+              "nativeQueryRef": "Service Due Date Count",
+              "displayName": "Service Due Date Count"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Maintenance_Schedule"
+                    }
+                  },
+                  "Property": "Completed Count"
+                }
+              },
+              "queryRef": "Maintenance_Schedule.Completed Count",
+              "nativeQueryRef": "Date Servicee Completed Count",
+              "displayName": "Date Servicee Completed Count"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Maintenance_Schedule"
+                    }
+                  },
+                  "Property": "Date Service Completed Count"
+                }
+              },
+              "queryRef": "Maintenance_Schedule.Date Service Completed Count",
+              "nativeQueryRef": "Date Service Completed Count"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Maintenance_Schedule"
+                  }
+                },
+                "Property": "Due Count"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
