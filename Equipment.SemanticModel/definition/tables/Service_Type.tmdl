@@ -1,0 +1,187 @@
+table Service_Type
+	lineageTag: aba793f6-b763-4756-9ac2-216e2e419af8
+
+	column id
+		dataType: string
+		lineageTag: cdfcd1a0-175a-4be5-a7cf-dfac74c185cc
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: a8ebf378-369f-4d4d-ad56-68f67c69ce6b
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Type'
+		dataType: string
+		lineageTag: 67d6d183-2c2a-4364-9267-d6e758cab33e
+		summarizeBy: none
+		sourceColumn: Service Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 15c45a33-0a26-4547-97ad-dd86fa09844a
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		lineageTag: 4119d239-c1f3-44f4-b3c1-f6250fca82f5
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 43ba94bf-4611-418e-b5c6-d41601adcb36
+		summarizeBy: none
+		sourceColumn: date_created
+
+		variation Variation
+			isDefault
+			relationship: 0f6df169-be51-43a5-912c-7c0b1fb29b4e
+			defaultHierarchy: LocalDateTable_716fc1e7-e4d8-44e3-891b-d59424edab94.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: 9a3db1d7-7750-4685-84d5-ab2548b6d321
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4fb719ec-28eb-47c4-b27f-e65cf8e61a92
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		variation Variation
+			isDefault
+			relationship: 8201b7ad-7b23-4b03-88a7-62563176de7c
+			defaultHierarchy: LocalDateTable_8cb7f23f-9aa1-44cc-b401-f7c0a0239ea0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: d1889201-1497-420e-a1ec-46fbfdd061fc
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_code
+		dataType: string
+		lineageTag: 1c379de8-42e8-4cd6-a0b5-fc6dbf0babf1
+		summarizeBy: none
+		sourceColumn: business_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_type_calibration
+		dataType: int64
+		formatString: 0
+		lineageTag: 557cd2f0-e1be-4680-97b9-7ef13d0c6151
+		summarizeBy: sum
+		sourceColumn: is_type_calibration
+
+		annotation SummarizationSetBy = Automatic
+
+	column placeholder_template_group_id
+		dataType: string
+		lineageTag: f06b323f-5e8a-4ca4-9a73-bf09721bc4e2
+		summarizeBy: none
+		sourceColumn: placeholder_template_group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column checklist_id
+		dataType: string
+		lineageTag: c99f5429-326f-442e-af6e-ed52479545c5
+		summarizeBy: none
+		sourceColumn: checklist_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_internal
+		dataType: int64
+		formatString: 0
+		lineageTag: 718db1f3-c4fd-44fd-b0a9-63d8686f0392
+		summarizeBy: sum
+		sourceColumn: is_internal
+
+		annotation SummarizationSetBy = Automatic
+
+	column oncomplete_document_upload_policy_id
+		dataType: string
+		lineageTag: 6d72a933-f02e-434f-955e-4d655e48c8a2
+		summarizeBy: none
+		sourceColumn: oncomplete_document_upload_policy_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column calibration_category_id
+		dataType: string
+		lineageTag: 49ba79db-6786-4964-8d2a-879bbb8dda75
+		summarizeBy: none
+		sourceColumn: calibration_category_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column color
+		dataType: string
+		lineageTag: ddd20ebb-c1ee-4f1e-8409-9c35ea8603f8
+		summarizeBy: none
+		sourceColumn: color
+
+		annotation SummarizationSetBy = Automatic
+
+	column tag_scheme_id
+		dataType: string
+		lineageTag: 0cbd036c-24e4-4d94-a35a-14975cbc59a0
+		summarizeBy: none
+		sourceColumn: tag_scheme_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column icon
+		dataType: string
+		lineageTag: 0da08312-d0f0-4fec-a63e-5008b2573931
+		summarizeBy: none
+		sourceColumn: icon
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Service_Type = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID ()]}[Data],
+				    Dataflow = Workspace {[dataflowId=getDataflowUUID ("Equipment_DF_Test")]}[Data],
+				    #"Service Type_" = Dataflow{[entity="Service Type",version=""]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(#"Service Type_",{{"name_text", "Service Type"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

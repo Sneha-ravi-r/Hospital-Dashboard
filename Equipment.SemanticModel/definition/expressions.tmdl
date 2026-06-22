@@ -1,0 +1,59 @@
+expression Workspace = "SnehaR_Test" meta [IsParameterQuery=true, List={"SnehaR_Test"}, DefaultValue="SnehaR_Test", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 89ed42ce-05f8-492f-bef3-94ebf35bfd7e
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression Environment = "SemaTree" meta [IsParameterQuery=true, List={"SemaTree", "Intertek"}, DefaultValue="SemaTree", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: a96165a3-8340-4216-93d9-c58484bdcae9
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression getDataflowUUID =
+		(dataflow as text) as text =>
+		let
+		    Source = Dataflow_UUID,
+		    Filtered_Rows = Table.SelectRows(Source, each ( ([Environment] = Environment) and ([Workspace] = Workspace) and ([Dataflow] = dataflow))),
+		    SingleRow = if Table.RowCount(Filtered_Rows) = 1 then Filtered_Rows else null
+		in
+		    Text.From(SingleRow{0}[UUID])
+	lineageTag: 283a3cf0-a663-46cc-b2b9-816b201856d5
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
+
+expression getWorkspaceUUID =
+		() as text =>
+		let
+		    Source = Workspace_UUID,
+		    _workspace = Text.Trim(Workspace),
+		    _environment = Text.Trim(Environment),
+		    Filtered_Rows = Table.SelectRows(Source, each ( ([Environment]=Environment) and ([Workspace] = Workspace))),
+		    SingleRow = if Table.RowCount(Filtered_Rows) = 1 then Filtered_Rows else null
+		in
+		    SingleRow{0}[UUID]
+	lineageTag: 2452e3ea-44dc-448c-bfe7-076bc52cc392
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
+
+expression 'Calibration (Old)' =
+		let
+		    Source = PowerPlatform.Dataflows(null),
+		    Workspaces = Source{[Id="Workspaces"]}[Data],
+		    #"d1b4e9be-540b-4c44-8fd8-386437cbb29a" = Workspaces{[workspaceId="d1b4e9be-540b-4c44-8fd8-386437cbb29a"]}[Data],
+		    #"25ec447e-e298-44ad-aa87-080587ac4c6e" = #"d1b4e9be-540b-4c44-8fd8-386437cbb29a"{[dataflowId="25ec447e-e298-44ad-aa87-080587ac4c6e"]}[Data],
+		    Calibration_ = #"25ec447e-e298-44ad-aa87-080587ac4c6e"{[entity="Equipment_Calibration",version=""]}[Data]
+		in
+		    Calibration_
+	lineageTag: 2c0522b9-2c68-46d0-a6c0-c96b2578ff0f
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

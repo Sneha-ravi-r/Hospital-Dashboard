@@ -1,0 +1,40 @@
+table Workspace_UUID
+	lineageTag: 961248f1-43ce-4464-accc-8fbf5de9d817
+
+	column Environment
+		dataType: string
+		lineageTag: d994438f-61d7-46e4-aa1f-1fc033ec59e1
+		summarizeBy: none
+		sourceColumn: Environment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Workspace
+		dataType: string
+		lineageTag: f8e6a5b8-f228-4130-a3a2-8098d997aa76
+		summarizeBy: none
+		sourceColumn: Workspace
+
+		annotation SummarizationSetBy = Automatic
+
+	column UUID
+		dataType: string
+		lineageTag: 0f4a5302-b544-4d2a-aa3c-0df99b396a45
+		summarizeBy: none
+		sourceColumn: UUID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Workspace_UUID = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCk7NTQwpSk1V0lEKzkvNSAyKD0ktLgHyUgyTTFItk1J1TU0MknRNkk1MdC3SUix0jS3MTIzNk5OSjCwTlWJjAQ==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Environment = _t, Workspace = _t, UUID = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Environment", type text}, {"Workspace", type text}, {"UUID", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

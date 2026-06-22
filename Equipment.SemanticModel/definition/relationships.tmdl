@@ -1,0 +1,205 @@
+relationship 53969fae-e145-4564-bb56-fe7cc9ad2438
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calibration_Category.date_created
+	toColumn: LocalDateTable_2329d586-49c9-4938-b7a0-b1f321ba5f0b.Date
+
+relationship f80f7723-e4e1-41dc-a831-0b79f7f22673
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calibration_Category.date_last_updated
+	toColumn: LocalDateTable_053550c2-7f79-4240-bafd-de27440f6f75.Date
+
+relationship e5ce07fc-1530-4af2-84a4-37a9e7eff3b7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DF_Last_Updated.'Updated Time in UTC'
+	toColumn: LocalDateTable_2371a38b-7e1b-4537-8f46-7e78c380d26e.Date
+
+relationship 62f60025-5cea-44ff-9a34-1a04ea166c0c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Equipment.date_created
+	toColumn: LocalDateTable_50dc7ade-76a4-46ac-96d6-11d314caf30c.Date
+
+relationship 679d65fd-0dae-429a-bf53-bef0957a86ab
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Equipment.date_last_updated
+	toColumn: LocalDateTable_6c8f5e4a-3601-45b8-9f0a-d6252c4a4804.Date
+
+relationship f353085e-0a7a-4876-aa9b-260f03758240
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Equipment.date_active
+	toColumn: LocalDateTable_a7aa7c46-aa19-4dd9-b05e-c60380520d84.Date
+
+relationship be00b91b-c940-4fd9-83d7-52efe05bf256
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Equipment.date_retired
+	toColumn: LocalDateTable_2841fdf8-900c-412d-902b-464b295c05c3.Date
+
+relationship 0a78117e-2a98-4420-8088-1a780ab7de33
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Equipment.date_offline
+	toColumn: LocalDateTable_7704b760-ef95-42f4-abd2-7d20b11c7cb2.Date
+
+relationship fb1203d5-8109-47ad-824e-69c7f5c06042
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Equipment.date_of_purchase
+	toColumn: LocalDateTable_6439e354-75b9-46aa-9ca9-25aa9641b062.Date
+
+relationship 37dae091-986b-4096-9370-b20338184dad
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Equipment.date_last_service
+	toColumn: LocalDateTable_25ad34fe-2bc8-4b05-9511-4db57530d7ec.Date
+
+relationship a49b71c3-2a66-410c-b477-3647295204f9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Equipment.date_service_due
+	toColumn: LocalDateTable_e3cf0a86-c0d3-45dc-b354-5fd40d1a318d.Date
+
+relationship 0f6df169-be51-43a5-912c-7c0b1fb29b4e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Service_Type.date_created
+	toColumn: LocalDateTable_716fc1e7-e4d8-44e3-891b-d59424edab94.Date
+
+relationship 8201b7ad-7b23-4b03-88a7-62563176de7c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Service_Type.date_last_updated
+	toColumn: LocalDateTable_8cb7f23f-9aa1-44cc-b401-f7c0a0239ea0.Date
+
+relationship eab44995-d430-4b60-8b40-a1d74406e027
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date.Date
+	toColumn: LocalDateTable_faf7b449-b919-44fd-b1de-a38769a37673.Date
+
+relationship 795bd55e-56f5-1e84-ed30-f8b44d8ad466
+	fromColumn: Calibration_Category.calibration_service_type_id
+	toColumn: Service_Type.id
+
+relationship 069180f2-e674-71be-a785-085467d66efa
+	fromColumn: Equipment.department_id
+	toColumn: Department.id
+
+relationship 9bb9b9b4-9367-48ed-8483-1eb520f6396a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Checkout_log.date_last_updated
+	toColumn: LocalDateTable_0d9db0e1-868e-4325-92a0-7149e6e31444.Date
+
+relationship b9e202ef-fc1d-4035-b23f-6a8f0eba9296
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Checkout_log.date_estimated_checkin
+	toColumn: LocalDateTable_a7d98824-4d8e-4728-9650-5f348133f41a.Date
+
+relationship 6ded5d5d-e15d-4ff4-a9a2-f967e49a657a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Checkout_type.date_created
+	toColumn: LocalDateTable_4ccb7a6d-89a3-45b7-a6b4-a69347339327.Date
+
+relationship 538da974-c6c4-4187-b020-2eed648c57c9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Checkout_type.date_last_updated
+	toColumn: LocalDateTable_edd45e19-266b-4b69-a4fd-af7abdc29a29.Date
+
+relationship 070b9ff1-0804-d172-f48c-a99b90b802ff
+	fromColumn: Checkout_log.equipment_id
+	toColumn: Equipment.id
+
+relationship 4dbf0805-eaf6-4e59-adde-2d07c6a9a845
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Maintenance_Schedule.date_created
+	toColumn: LocalDateTable_3b91cde9-f1f4-422e-a1a4-70d29a147f7a.Date
+
+relationship 26fe19b1-338f-46bd-a407-6c8b889e4bb9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Maintenance_Schedule.date_last_updated
+	toColumn: LocalDateTable_57121ef0-f008-499c-8ecb-eaf82d205b5b.Date
+
+relationship aae47045-f5b9-4934-a5dc-40fc37898a8d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Maintenance_Schedule.date_calculated_alert
+	toColumn: LocalDateTable_0529d170-d1d4-4c8d-be85-5bab26a1e9d9.Date
+
+relationship 6fc20343-072f-4ca7-9233-5e5819001841
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calibration.calibration_date
+	toColumn: LocalDateTable_40f7c1ab-f310-4b7a-84ab-2a5db5aaa768.Date
+
+relationship a34a3fc2-5555-4b3c-a45d-a66ee376029f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calibration.date_created
+	toColumn: LocalDateTable_3918342d-394f-4ac7-8c44-b07ea15a35e4.Date
+
+relationship 5bd3393a-e4dc-4301-8810-150596dbeb44
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calibration.date_sent_for_calibration
+	toColumn: LocalDateTable_10d6e1ee-88af-4e78-a94a-6dbe45ac193e.Date
+
+relationship 9869065e-c6cf-4b3a-a90b-c164d8e111c9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calibration.date_service_due
+	toColumn: LocalDateTable_7fdead8f-58f4-4f4b-a9f2-252b375084f3.Date
+
+relationship d4aeee4e-46d0-4862-9a14-919cc17ba7b8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calibration.date_service_completed
+	toColumn: LocalDateTable_47655d31-2dea-474a-8407-0c8c0d071c0e.Date
+
+relationship 1c0e950b-d58f-40d6-9230-07ca6a543b59
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calibration.date_service_canceled
+	toColumn: LocalDateTable_8abe3eb6-6afd-44fa-9abf-b82366f45cd4.Date
+
+relationship AutoDetected_0cb0f466-fa69-4fdb-8ea6-86abd3b1368c
+	fromColumn: Calibration.equipment_id
+	toColumn: Equipment.id
+
+relationship AutoDetected_9f6be0f7-8393-4301-837c-0d9af43a6f9e
+	fromColumn: Calibration.service_type_id
+	toColumn: Service_Type.id
+
+relationship 7847a010-cfaa-4f53-b14a-214c71b3ebe2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date_Service_Completed.Date_Service_Completed
+	toColumn: LocalDateTable_26079956-8a18-46ef-8d61-2c92b0d5db7a.Date
+
+relationship AutoDetected_d6f6f2ed-e117-4952-9090-ed854add6686
+	fromColumn: Calibration.maintenance_schedule_id
+	toColumn: Date_Service_Completed.maintenance_schedule_id
+
+relationship AutoDetected_15ba1fb5-f58c-4946-9c55-e45453e5c5f4
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Workspace_UUID.Environment
+	toColumn: Dataflow_UUID.Environment
+
+relationship 03d6e430-fe9e-6a8e-1f68-d113d1129911
+	fromColumn: Maintenance_Schedule.date_calculated_service_due
+	toColumn: Date.Date
+
+relationship 0eb4e668-2e4e-bba7-bbb3-d7a5eff9c33d
+	isActive: false
+	fromColumn: Maintenance_Schedule.Date_Service_Completed
+	toColumn: Date.Date
+
+relationship 94fa7c4d-342d-8f7b-a03f-05bb60940bea
+	fromColumn: Checkout_log.date_created
+	toColumn: Date.Date
+
+relationship 4acd3bc8-db90-f15d-c89c-dd21158ed91c
+	isActive: false
+	fromColumn: Checkout_log.date_of_check_in
+	toColumn: Date.Date
+
+relationship d38949c4-a1fd-4fbc-82a3-b63b2e191dc1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.Date
+	toColumn: LocalDateTable_34d970fc-36dd-448f-abc9-bd795573ed87.Date
+
+relationship 5de65806-8cf2-67fa-03be-465b8ee21b77
+	fromColumn: Checkout_log.checkout_type_id
+	toColumn: Checkout_type.id
+
+relationship 771f6ca1-f4b2-5433-7b64-ed212ffa92bf
+	fromColumn: Maintenance_Schedule.service_type_id
+	toColumn: Service_Type.id
+
+relationship de79d595-66d9-a15c-b181-e682690a5280
+	fromColumn: Maintenance_Schedule.equipment_id
+	toColumn: Equipment.id
+

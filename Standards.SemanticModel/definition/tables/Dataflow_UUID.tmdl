@@ -1,0 +1,48 @@
+table Dataflow_UUID
+	lineageTag: fb944605-db98-4091-9709-7b34e9b809fb
+
+	column Environment
+		dataType: string
+		lineageTag: 620395d9-de6e-4747-af80-8eef1f08613e
+		summarizeBy: none
+		sourceColumn: Environment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Workspace
+		dataType: string
+		lineageTag: 18ea5c55-b5cf-48b0-8aab-1bc6d789f92a
+		summarizeBy: none
+		sourceColumn: Workspace
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dataflow
+		dataType: string
+		lineageTag: aa6059d8-4721-4afb-95a5-02cb2724a52d
+		summarizeBy: none
+		sourceColumn: Dataflow
+
+		annotation SummarizationSetBy = Automatic
+
+	column UUID
+		dataType: string
+		lineageTag: a0a44b73-112a-4d4f-b692-4c1e70db03eb
+		summarizeBy: none
+		sourceColumn: UUID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dataflow_UUID = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("fcwxDoMwDEDRu2TGUohTHPaqBwA2FCHHcdWlVErg/oVOnRj/H948m1HfPBVV05hx1RcPy6R1O2vjNXPJ9TeW++N42jI6TQSWnQcvnoAlIFBPSXqPjhRNbC7UQetnL6J/aPLd0xInsLcTDZkhoTIECe2BOhYkE+MX", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Environment = _t, Workspace = _t, Dataflow = _t, UUID = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Environment", type text}, {"Workspace", type text}, {"Dataflow", type text}, {"UUID", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

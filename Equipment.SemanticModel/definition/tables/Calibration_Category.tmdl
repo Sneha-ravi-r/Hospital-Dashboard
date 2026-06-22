@@ -1,0 +1,180 @@
+table Calibration_Category
+	lineageTag: de1a7503-2f8b-4e82-875e-6770e82f2d02
+
+	column id
+		dataType: string
+		lineageTag: c89ea9a4-9155-4dfb-b338-9c01ee7e6e66
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: 607836f1-d1c2-4aa4-b25a-ca8f37ece961
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 35bc05a4-74cc-4ef4-8d9e-7c357a2f77f3
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_code
+		dataType: string
+		lineageTag: 8c6e26c7-3528-46b0-9328-a801b5775de4
+		summarizeBy: none
+		sourceColumn: business_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 2ebb0f24-9626-4b0d-84c7-fc7aea11f53a
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		lineageTag: 0cc582f6-4d62-4fda-bf79-9656647b65bd
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9b82ee52-25b8-4b47-b1d1-e518453ab947
+		summarizeBy: none
+		sourceColumn: date_created
+
+		variation Variation
+			isDefault
+			relationship: 53969fae-e145-4564-bb56-fe7cc9ad2438
+			defaultHierarchy: LocalDateTable_2329d586-49c9-4938-b7a0-b1f321ba5f0b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: 94a033d1-6c69-43ac-a4ed-e54f3f976693
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e60b2332-a4d6-4bee-bdfc-9ea3037fdd2d
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		variation Variation
+			isDefault
+			relationship: f80f7723-e4e1-41dc-a831-0b79f7f22673
+			defaultHierarchy: LocalDateTable_053550c2-7f79-4240-bafd-de27440f6f75.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: a90cfea3-5e57-411b-a043-1107e3a6ce19
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column calibration_source
+		dataType: string
+		lineageTag: 11804814-07b0-4405-ade4-4ef9e617d83c
+		summarizeBy: none
+		sourceColumn: calibration_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column calibration_frequency
+		dataType: string
+		lineageTag: 7aea24ae-faf8-4dd6-b80c-3069420c6860
+		summarizeBy: none
+		sourceColumn: calibration_frequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column verify_before_use
+		dataType: int64
+		formatString: 0
+		lineageTag: 8970e14f-a59c-4da7-adbe-e5f62d86c5c2
+		summarizeBy: sum
+		sourceColumn: verify_before_use
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_calibration_interval
+		dataType: int64
+		formatString: 0
+		lineageTag: 70fb5c53-e3f3-4b6e-b4ea-7b5e2570dc48
+		summarizeBy: sum
+		sourceColumn: max_calibration_interval
+
+		annotation SummarizationSetBy = Automatic
+
+	column calibration_service_type_id
+		dataType: string
+		lineageTag: d986c2d4-5ceb-4560-b595-cc7bfea72925
+		summarizeBy: none
+		sourceColumn: calibration_service_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column requires_calibration
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b5b3194-0ba3-4233-99e8-b3595bc4c475
+		summarizeBy: sum
+		sourceColumn: requires_calibration
+
+		annotation SummarizationSetBy = Automatic
+
+	column placeholder_template_group_id
+		dataType: string
+		lineageTag: 50858bbb-513f-4f06-96e6-8441175db157
+		summarizeBy: none
+		sourceColumn: placeholder_template_group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_text
+		dataType: string
+		lineageTag: 6f9af373-7d69-458d-83d9-d7ce26a8ce8b
+		summarizeBy: none
+		sourceColumn: label_text
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calibration_Category = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID ()]}[Data],
+				    Dataflow = Workspace {[dataflowId=getDataflowUUID ("Equipment_DF_Test")]}[Data],
+				    #"Calibration Category_" = Dataflow{[entity="Calibration Category",version=""]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(#"Calibration Category_",{{"name_text", "Category"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,38 @@
+table Date_Service_Completed
+	lineageTag: 8b8e05ea-540c-4f7b-8054-8470e934dd63
+
+	column maintenance_schedule_id
+		dataType: string
+		lineageTag: 08397559-91b5-47dd-9abc-b7feb0eb9d38
+		summarizeBy: none
+		sourceColumn: maintenance_schedule_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_Service_Completed
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b25f1aa9-fd0b-46f8-be00-5c2f20820e6c
+		summarizeBy: none
+		sourceColumn: Date_Service_Completed
+
+		variation Variation
+			isDefault
+			relationship: 7847a010-cfaa-4f53-b14a-214c71b3ebe2
+			defaultHierarchy: LocalDateTable_26079956-8a18-46ef-8d61-2c92b0d5db7a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date_Service_Completed = m
+		mode: import
+		source =
+				let
+				    Source = Calibration,
+				    #"Grouped Rows" = Table.Group(Source, {"maintenance_schedule_id"}, {{"Date_Service_Completed", each List.Max([date_service_completed]), type nullable datetime}})
+				in
+				    #"Grouped Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,257 @@
+table Resource
+	lineageTag: 37cc14f1-f13a-4194-ad09-4bfa6f560af9
+
+	column id
+		dataType: string
+		lineageTag: 124373da-0174-4c92-bd35-f9fb90db6e41
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: fad4f2c5-e0de-4fdc-ba7e-4ab6a8b80c48
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column resource_name
+		dataType: string
+		lineageTag: fff6736c-6137-41a8-b6a3-e92e0722f69f
+		summarizeBy: none
+		sourceColumn: resource_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 088896b1-70e0-418f-a812-1fda68cfcc11
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column document_entity_id
+		dataType: string
+		lineageTag: 748ae3a0-e346-475d-9955-bea8a01c219a
+		summarizeBy: none
+		sourceColumn: document_entity_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column document_entity_type_id
+		dataType: string
+		lineageTag: 4749c52c-ad25-4c3b-86fa-11da540f908f
+		summarizeBy: none
+		sourceColumn: document_entity_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column resource_type_id
+		dataType: string
+		lineageTag: f15fbd4f-be35-4e91-8ed0-eecc516701df
+		summarizeBy: none
+		sourceColumn: resource_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 35723068-54c3-4188-b126-2b7d21bab371
+		summarizeBy: none
+		sourceColumn: date_created
+
+		variation Variation
+			isDefault
+			relationship: 679a7eba-1596-4716-b697-3a26b5a3e479
+			defaultHierarchy: LocalDateTable_858247fa-7e80-430f-9e9e-56767be48113.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: 593ef95e-aac1-40f2-a703-9bfb3c4bc1e6
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6b050aa2-4fdf-45ef-a0c1-b58d003392bd
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		variation Variation
+			isDefault
+			relationship: 5588fed9-e99b-414e-8810-730190572859
+			defaultHierarchy: LocalDateTable_ed9b2117-d4d5-4606-99ad-391f672f8b47.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: 952a0c85-7857-4c4b-a767-3d9967653009
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency_iso_code
+		dataType: string
+		lineageTag: c584608f-52a9-47b7-af5c-e3624e6dda13
+		summarizeBy: none
+		sourceColumn: currency_iso_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column working_time_zone
+		dataType: string
+		lineageTag: 8d3fe764-5a47-406a-9e22-cc8abf5a894c
+		summarizeBy: none
+		sourceColumn: working_time_zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column resource_display_name
+		dataType: string
+		lineageTag: 1acb4927-7eb4-4d14-ace3-c702a0861278
+		summarizeBy: none
+		sourceColumn: resource_display_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column billable_percent
+		dataType: double
+		lineageTag: bc6d2fcd-e69d-42c8-adeb-5cd11e531820
+		summarizeBy: sum
+		sourceColumn: billable_percent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column status
+		dataType: int64
+		formatString: 0
+		lineageTag: 5a56afa0-7323-4fc3-904d-b895675849f7
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column can_overallocate
+		dataType: int64
+		formatString: 0
+		lineageTag: 8da1aaec-19f9-4796-b4dd-7b4fa94158c9
+		summarizeBy: sum
+		sourceColumn: can_overallocate
+
+		annotation SummarizationSetBy = Automatic
+
+	column minimum_allocation_hours
+		dataType: int64
+		formatString: 0
+		lineageTag: 969b5c9b-5114-4144-9ac8-f92cd321238b
+		summarizeBy: sum
+		sourceColumn: minimum_allocation_hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column requires_dependent_resource
+		dataType: int64
+		formatString: 0
+		lineageTag: 6fe25a10-cb2c-4a9b-ac9b-c027bc54bcbe
+		summarizeBy: sum
+		sourceColumn: requires_dependent_resource
+
+		annotation SummarizationSetBy = Automatic
+
+	column organization_id
+		dataType: string
+		lineageTag: 1416c94b-89f9-4e75-af76-d42fe48740d4
+		summarizeBy: none
+		sourceColumn: organization_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_user_id
+		dataType: string
+		lineageTag: 86040e82-1838-41ad-9bc4-e3f6ad18a895
+		summarizeBy: none
+		sourceColumn: tenant_user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_holiday_id
+		dataType: string
+		lineageTag: 256ab7cd-8ab8-47c8-95a4-415db202230d
+		summarizeBy: none
+		sourceColumn: company_holiday_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column requires_timesheet
+		dataType: int64
+		formatString: 0
+		lineageTag: 89d52d31-20c8-4c77-ba11-395199d19c68
+		summarizeBy: sum
+		sourceColumn: requires_timesheet
+
+		annotation SummarizationSetBy = Automatic
+
+	column restrict_timesheet_to_working_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 420ee6f3-9cc5-4111-9b02-d3d867c94801
+		summarizeBy: sum
+		sourceColumn: restrict_timesheet_to_working_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column enable_time_sheet_tracking
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a07ad40-2887-4975-b98f-4d10a6de4d94
+		summarizeBy: sum
+		sourceColumn: enable_time_sheet_tracking
+
+		annotation SummarizationSetBy = Automatic
+
+	column enable_project_updates
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f801983-b4ef-497f-af82-8b9ba5dbe378
+		summarizeBy: sum
+		sourceColumn: enable_project_updates
+
+		annotation SummarizationSetBy = Automatic
+
+	column about_path
+		dataType: string
+		lineageTag: de7c1096-a918-4698-a1d3-ad17985e1eb6
+		summarizeBy: none
+		sourceColumn: about_path
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Resource = m
+		mode: import
+		source =
+				let
+				      Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID()]}[Data],
+				    Dataflow = Workspace{[dataflowId=getDataflowUUID ("Resource_Test_DF")]}[Data],
+				    Resource_ = Dataflow {[entity="Resource",version=""]}[Data]
+				in
+				    Resource_
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

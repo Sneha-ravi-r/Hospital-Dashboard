@@ -1,0 +1,51 @@
+expression Environment = "SemaTree" meta [IsParameterQuery=true, List={"SemaTree", "Intertek"}, DefaultValue="SemaTree", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 3a385e8a-8991-4815-aab8-62e9f768a25d
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression Workspace = "SnehaR_Test" meta [IsParameterQuery=true, List={"SnehaR_Test"}, DefaultValue="SnehaR_Test", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: ba95d12a-6242-4983-a0a5-6ae1f98a467c
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression DataflowGen = "1" meta [IsParameterQuery=true, List={"1", "2"}, DefaultValue="1", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 1e5747b2-e796-42da-ac28-30058232ee4d
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression getDataflowUUID =
+		(dataflow as text) as text =>
+		let
+		    Source = Dataflow_UUID,
+		    Filtered_Rows = Table.SelectRows(Source, each ( ([Environment] = Environment) and ([Workspace] = Workspace) and ([Dataflow] = dataflow))),
+		    SingleRow = if Table.RowCount(Filtered_Rows) = 1 then Filtered_Rows else null
+		in
+		    Text.From(SingleRow{0}[UUID])
+	lineageTag: 4c9a231c-1a58-4991-b6a8-24ed842a7d72
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
+
+expression getWorkspaceUUID =
+		() as text =>
+		let
+		    Source = Workspace_UUID,
+		    _workspace = Text.Trim(Workspace),
+		    _environment = Text.Trim(Environment),
+		    Filtered_Rows = Table.SelectRows(Source, each ( ([Environment]=Environment) and ([Workspace] = Workspace))),
+		    SingleRow = if Table.RowCount(Filtered_Rows) = 1 then Filtered_Rows else null
+		in
+		    SingleRow{0}[UUID]
+	lineageTag: 20c04fb9-3f2a-4e6c-aea1-e56b6a13cc32
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
+

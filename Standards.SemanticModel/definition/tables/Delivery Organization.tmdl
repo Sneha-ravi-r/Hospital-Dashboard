@@ -1,0 +1,112 @@
+table 'Delivery Organization'
+	lineageTag: 33c950ee-3699-49ab-ba61-28fab9f19d48
+
+	column id
+		dataType: string
+		lineageTag: 5d170d91-08ec-4aac-be07-7864854a3acb
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: 4e90bc15-d4f0-4cc4-9dd6-e4da9013d9d0
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column standard_id
+		dataType: string
+		lineageTag: edc45ade-c613-4d0f-b529-1f503619193d
+		summarizeBy: none
+		sourceColumn: standard_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column organization_id
+		dataType: string
+		lineageTag: 6c04d19d-43a1-4d2f-8587-d21038374786
+		summarizeBy: none
+		sourceColumn: organization_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fa7d7514-7722-4cbf-947c-f235fde7e155
+		summarizeBy: none
+		sourceColumn: date_created
+
+		variation Variation
+			isDefault
+			relationship: 68ad0bba-2960-4151-a5e1-b2941faaf292
+			defaultHierarchy: LocalDateTable_a3cdc0f5-6628-4a85-9606-9ef486dfc678.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: 19a22226-9586-43dc-964e-364ad5909303
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ea03fc99-c833-4aa1-9845-58b06ef2ef91
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		variation Variation
+			isDefault
+			relationship: 068b2b7d-c61d-4fdb-be0c-d84cfb4e8525
+			defaultHierarchy: LocalDateTable_fef4fc85-a762-4dec-a3cb-79bd659d1b39.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: 9c49ec1d-b603-431d-b0bb-9964a251f3c7
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column in_trash
+		dataType: int64
+		formatString: 0
+		lineageTag: 621a10a8-4e9a-4046-baa3-cdf739c140ec
+		summarizeBy: sum
+		sourceColumn: in_trash
+
+		annotation SummarizationSetBy = Automatic
+
+	column status_code
+		dataType: string
+		lineageTag: 3c0fd83a-bd7c-4b5c-8609-756e3451b0ed
+		summarizeBy: none
+		sourceColumn: status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Delivery Organization' = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID()]}[Data],
+				    Dataflow = Workspace{[dataflowId=getDataflowUUID ("Standards_Test_DF") ]}[Data],
+				    #"Delivery Organization_" = Dataflow{[entity="Delivery Organization",version=""]}[Data]
+				in
+				    #"Delivery Organization_"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

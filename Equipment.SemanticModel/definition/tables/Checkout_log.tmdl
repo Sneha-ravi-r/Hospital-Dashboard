@@ -1,0 +1,328 @@
+table Checkout_log
+	lineageTag: 27372c27-2b17-48a4-a9c3-6553c812c35b
+
+	measure 'Checked Out Too Long' =
+			
+			CALCULATE(
+			    COUNTROWS('Checkout_log'),
+			    'Checkout_log'[Days Checked Out Too Long] > 0
+			)
+		formatString: 0
+		lineageTag: 33cc2d3f-1b00-4ebb-a41b-a5d9adc36856
+
+	measure 'Late Being Returned' =
+			
+			CALCULATE(
+			    COUNTROWS(Checkout_log),
+			    'Checkout_log'[Days Late Being Returned] > 0
+			)
+		formatString: 0
+		lineageTag: 5027e087-605b-4ea0-b2e5-948b5dd33353
+
+	measure 'Returned Items' = CALCULATE(COUNTROWS('Checkout_log'), USERELATIONSHIP('Date'[Date], Checkout_log[date_of_check_in]), not ISBLANK(Checkout_log[date_of_check_in]))
+		formatString: 0
+		lineageTag: 7c179e8a-4264-4263-b142-318f37cba114
+
+	measure 'Returned Items 2' = CALCULATE(COUNTROWS('Checkout_log'), NOT ISBLANK( Checkout_log[date_of_check_in]))
+		formatString: 0
+		lineageTag: 9adfb053-be1f-4b32-97a1-6a33f2556132
+
+	column id
+		dataType: string
+		lineageTag: 75fe3714-2e4f-456b-903d-e8ad999fe57a
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: 16e6a71d-ba71-44c8-8f94-38bf41c2c9eb
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_id
+		dataType: string
+		lineageTag: 670c2ab4-304b-4394-bcd5-253390cbdd9a
+		summarizeBy: none
+		sourceColumn: equipment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkout_type_id
+		dataType: string
+		lineageTag: 2b2198c1-55dc-4bbf-8e75-bc4844dfa130
+		summarizeBy: none
+		sourceColumn: checkout_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_user_id
+		dataType: string
+		lineageTag: 09be50e2-724e-404f-bc6d-f7ea364adf02
+		summarizeBy: none
+		sourceColumn: tenant_user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_user_name
+		dataType: string
+		lineageTag: dd237dc9-e11b-4e38-8b4c-97df2b93d693
+		summarizeBy: none
+		sourceColumn: tenant_user_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column checked_in_user_name
+		dataType: string
+		lineageTag: 36f37767-8d35-423e-a354-3bec1506bd2e
+		summarizeBy: none
+		sourceColumn: checked_in_user_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_of_check_in
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c35ec40b-3f19-460a-afce-8288caefcdf2
+		summarizeBy: none
+		sourceColumn: date_of_check_in
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column date_created
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 71f2a22c-954c-404f-8c5f-8720c1dcec13
+		summarizeBy: none
+		sourceColumn: date_created
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column created_by_name
+		dataType: string
+		lineageTag: 4070ddc4-ddfb-462e-aba6-a0e72a6063b0
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 48e0ac53-58c9-4390-9d65-97d0b9e5b45f
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		variation Variation
+			isDefault
+			relationship: 9bb9b9b4-9367-48ed-8483-1eb520f6396a
+			defaultHierarchy: LocalDateTable_0d9db0e1-868e-4325-92a0-7149e6e31444.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: c9b3e5c7-30b3-4bce-8d86-9829ac33bf89
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_in_condition_id
+		dataType: string
+		lineageTag: e40331c2-51af-483d-8fc2-4c9c0d17208d
+		summarizeBy: none
+		sourceColumn: check_in_condition_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_out_condition_id
+		dataType: string
+		lineageTag: 5f609ecc-0d4b-4323-b6f9-c6ab05133b32
+		summarizeBy: none
+		sourceColumn: check_out_condition_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkout_comment
+		dataType: string
+		lineageTag: 92ce430a-d2df-4c3e-a13e-731eb14d7313
+		summarizeBy: none
+		sourceColumn: checkout_comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkin_comment
+		dataType: string
+		lineageTag: a7774926-16bf-4708-a9d5-a831b54a6d6c
+		summarizeBy: none
+		sourceColumn: checkin_comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration
+		dataType: int64
+		formatString: 0
+		lineageTag: 5800c62d-2662-4cd9-9146-9580a183049e
+		summarizeBy: sum
+		sourceColumn: duration
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration_unit
+		dataType: string
+		lineageTag: 3145c6d2-c427-4a49-adfb-eeb9ccb16912
+		summarizeBy: none
+		sourceColumn: duration_unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_estimated_checkin
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a8b77b44-c784-403e-90cd-989f42f023c9
+		summarizeBy: none
+		sourceColumn: date_estimated_checkin
+
+		variation Variation
+			isDefault
+			relationship: b9e202ef-fc1d-4035-b23f-6a8f0eba9296
+			defaultHierarchy: LocalDateTable_a7d98824-4d8e-4728-9650-5f348133f41a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column reference_identifier
+		dataType: string
+		lineageTag: 561fc1ea-294e-4ee5-90d3-a58aa555ac60
+		summarizeBy: none
+		sourceColumn: reference_identifier
+
+		annotation SummarizationSetBy = Automatic
+
+	column reference_id
+		dataType: string
+		lineageTag: cd9355c7-5c24-4671-a76f-3f15fb023f49
+		summarizeBy: none
+		sourceColumn: reference_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column reference_type
+		dataType: string
+		lineageTag: 39fba0fb-88e7-45a8-b736-dda825e9ff28
+		summarizeBy: none
+		sourceColumn: reference_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column resource_id
+		dataType: string
+		lineageTag: da78fa44-b2cc-4b2d-9dcd-035d9b0e4bab
+		summarizeBy: none
+		sourceColumn: resource_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column about_path
+		dataType: string
+		lineageTag: 49df3c52-a96e-4574-b41d-0d268c1d6d5b
+		summarizeBy: none
+		sourceColumn: about_path
+
+		annotation SummarizationSetBy = Automatic
+
+	column assigned_by_tenant_user_id
+		dataType: string
+		lineageTag: 24d7d608-34ab-4eef-8299-7dcff1ce094e
+		summarizeBy: none
+		sourceColumn: assigned_by_tenant_user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column assigned_by_tenant_user_name
+		dataType: string
+		lineageTag: 32ef8329-fad2-4591-b14f-9963bfc9a512
+		summarizeBy: none
+		sourceColumn: assigned_by_tenant_user_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column document_upload_policy_id
+		dataType: string
+		lineageTag: ca1bb7ce-80bc-43b1-83fe-34d6402f4ea9
+		summarizeBy: none
+		sourceColumn: document_upload_policy_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_movement_id
+		dataType: string
+		lineageTag: 7fad05a3-cb19-4000-b1d4-266fa3206bb2
+		summarizeBy: none
+		sourceColumn: equipment_movement_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days Late Being Returned' =
+			
+			IF (
+			    NOT( ISBLANK('Checkout_log'[date_of_check_in]) ) &&
+			    'Checkout_log'[date_of_check_in] > 'Checkout_log'[date_estimated_checkin],
+			    DATEDIFF (
+			        'Checkout_log'[date_estimated_checkin],
+			        'Checkout_log'[date_of_check_in],
+			        DAY
+			    )
+			)
+		formatString: 0
+		lineageTag: ce92edcf-6cb1-494c-b682-592e1096a87e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days Checked Out Too Long' =
+			
+			IF (
+			    ISBLANK('Checkout_log'[date_of_check_in]) &&
+			    'Checkout_log'[date_estimated_checkin]< TODAY() ,
+			    DATEDIFF (
+			        'Checkout_log'[date_estimated_checkin],
+			        TODAY(),
+			        DAY),
+			        BLANK()
+			    )
+		formatString: 0
+		lineageTag: 6801591e-7f88-47af-93fa-bb094fc93913
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Checkout_log = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID ()]}[Data],
+				    Dataflow = Workspace {[dataflowId=getDataflowUUID ("Equipment_DF_Test")]}[Data],
+				    #"trutesta_equipment equipment_checkout_log_" = Dataflow{[entity="trutesta_equipment equipment_checkout_log",version=""]}[Data]
+				in
+				    #"trutesta_equipment equipment_checkout_log_"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

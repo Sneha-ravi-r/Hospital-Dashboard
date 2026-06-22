@@ -1,0 +1,84 @@
+table Date
+	lineageTag: 78409273-8426-4027-b16b-edd85a075b97
+
+	column Date
+		formatString: General Date
+		lineageTag: fea48ade-b2f9-48c8-98a1-6d06c44e536d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: eab44995-d430-4b60-8b40-a1d74406e027
+			defaultHierarchy: LocalDateTable_faf7b449-b919-44fd-b1de-a38769a37673.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: 66f11e03-abf9-4beb-bbe2-d586df47ebb4
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		formatString: 0
+		lineageTag: 54188788-3e19-48de-94f0-f1fb82c0bec1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Month Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		lineageTag: a2a5b8b3-ebce-4137-b4e9-f94555a9a2f8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year-Month
+		lineageTag: 99a33d1a-7791-4d35-821f-2740fb7c4fc4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year-Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		lineageTag: f295f80c-c256-473b-9167-7a79c07a76fc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		formatString: 0
+		lineageTag: 53405d9c-3792-47dc-9dc9-a79a69abc95a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Day]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = calculated
+		mode: import
+		source =
+				
+				ADDCOLUMNS(
+				    CALENDAR(DATE(2020,1,1), DATE(2030,12,31)),
+				    "Year", YEAR([Date]),
+				    "Month Number", MONTH([Date]),
+				    "Month Name", FORMAT([Date], "MMM"),
+				    "Year-Month", FORMAT([Date], "YYYY-MM"),
+				    "Quarter", "Q" & FORMAT([Date], "Q"),
+				    "Day", DAY([Date])
+				)
+
+	annotation PBI_Id = 142af6a6299d45689aa729880fcf048a
+

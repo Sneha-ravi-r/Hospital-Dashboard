@@ -1,0 +1,61 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Calibration_Category","Calibration (Old)","DF_Last_Updated","Equipment","Service_Type","Department","Checkout_log","Checkout_type","Maintenance_Schedule","Calibration","Date_Service_Completed","Workspace","Environment","getDataflowUUID","Dataflow_UUID","getWorkspaceUUID","Workspace_UUID"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Calibration_Category
+ref table DateTableTemplate_3f582fc9-a6c4-49ab-86ac-46b3674f089f
+ref table LocalDateTable_2329d586-49c9-4938-b7a0-b1f321ba5f0b
+ref table LocalDateTable_053550c2-7f79-4240-bafd-de27440f6f75
+ref table DF_Last_Updated
+ref table LocalDateTable_2371a38b-7e1b-4537-8f46-7e78c380d26e
+ref table Equipment
+ref table LocalDateTable_50dc7ade-76a4-46ac-96d6-11d314caf30c
+ref table LocalDateTable_6c8f5e4a-3601-45b8-9f0a-d6252c4a4804
+ref table LocalDateTable_a7aa7c46-aa19-4dd9-b05e-c60380520d84
+ref table LocalDateTable_2841fdf8-900c-412d-902b-464b295c05c3
+ref table LocalDateTable_7704b760-ef95-42f4-abd2-7d20b11c7cb2
+ref table LocalDateTable_6439e354-75b9-46aa-9ca9-25aa9641b062
+ref table LocalDateTable_25ad34fe-2bc8-4b05-9511-4db57530d7ec
+ref table LocalDateTable_e3cf0a86-c0d3-45dc-b354-5fd40d1a318d
+ref table Service_Type
+ref table LocalDateTable_716fc1e7-e4d8-44e3-891b-d59424edab94
+ref table LocalDateTable_8cb7f23f-9aa1-44cc-b401-f7c0a0239ea0
+ref table Date
+ref table LocalDateTable_faf7b449-b919-44fd-b1de-a38769a37673
+ref table Department
+ref table Checkout_log
+ref table LocalDateTable_0d9db0e1-868e-4325-92a0-7149e6e31444
+ref table LocalDateTable_a7d98824-4d8e-4728-9650-5f348133f41a
+ref table Checkout_type
+ref table LocalDateTable_4ccb7a6d-89a3-45b7-a6b4-a69347339327
+ref table LocalDateTable_edd45e19-266b-4b69-a4fd-af7abdc29a29
+ref table Maintenance_Schedule
+ref table LocalDateTable_3b91cde9-f1f4-422e-a1a4-70d29a147f7a
+ref table LocalDateTable_57121ef0-f008-499c-8ecb-eaf82d205b5b
+ref table LocalDateTable_0529d170-d1d4-4c8d-be85-5bab26a1e9d9
+ref table Calibration
+ref table LocalDateTable_40f7c1ab-f310-4b7a-84ab-2a5db5aaa768
+ref table LocalDateTable_3918342d-394f-4ac7-8c44-b07ea15a35e4
+ref table LocalDateTable_10d6e1ee-88af-4e78-a94a-6dbe45ac193e
+ref table LocalDateTable_7fdead8f-58f4-4f4b-a9f2-252b375084f3
+ref table LocalDateTable_47655d31-2dea-474a-8407-0c8c0d071c0e
+ref table LocalDateTable_8abe3eb6-6afd-44fa-9abf-b82366f45cd4
+ref table Date_Service_Completed
+ref table LocalDateTable_26079956-8a18-46ef-8d61-2c92b0d5db7a
+ref table Dataflow_UUID
+ref table Workspace_UUID
+ref table Calendar
+ref table LocalDateTable_34d970fc-36dd-448f-abc9-bd795573ed87
+
+ref cultureInfo en-IN
+

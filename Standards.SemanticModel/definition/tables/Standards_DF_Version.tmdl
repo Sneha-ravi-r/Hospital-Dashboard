@@ -1,0 +1,27 @@
+table Standards_DF_Version
+	lineageTag: 0e236f2a-4b3e-4905-84d8-d45771ee7511
+
+	column 'DF Version'
+		dataType: string
+		lineageTag: d39bdc8c-197d-4c36-a2d2-60314e5bf794
+		summarizeBy: none
+		sourceColumn: DF Version
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Standards_DF_Version = m
+		mode: import
+		source =
+				let
+				     Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID()]}[Data],
+				    Dataflow = Workspace{[dataflowId=getDataflowUUID ("Standards_Test_DF") ]}[Data],
+				    Standards_DF_Version_ = Dataflow {[entity="Standards_DF_Version",version=""]}[Data]
+				in
+				    Standards_DF_Version_
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

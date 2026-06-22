@@ -1,0 +1,136 @@
+table Checkout_type
+	lineageTag: c633e458-1a01-42c6-af22-7bf3aa6032e6
+
+	column id
+		dataType: string
+		lineageTag: e73082a0-3b29-44bc-9790-c8102c84e757
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: aa862a69-f498-41fb-8929-a6e14c241843
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name_text
+		dataType: string
+		lineageTag: 55cbdb7f-bd3d-4f6c-b61d-3fbf240ea4f1
+		summarizeBy: none
+		sourceColumn: name_text
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_code
+		dataType: string
+		lineageTag: 5891cd8f-bf7c-4dfc-90cd-baa18f33fc42
+		summarizeBy: none
+		sourceColumn: business_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 808e44d4-48f8-4126-b808-16b052c67b5e
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		lineageTag: c5ce63ad-901a-483c-b6c3-6b9faac46dc9
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkin_checklist_id
+		dataType: string
+		lineageTag: 53ef4f59-324d-477c-95f3-897185c6f874
+		summarizeBy: none
+		sourceColumn: checkin_checklist_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column placeholder_template_group_id
+		dataType: string
+		lineageTag: fc8fecb1-98ee-4ce6-ae29-5ea7da49f2d0
+		summarizeBy: none
+		sourceColumn: placeholder_template_group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c81580b0-2107-472a-8498-9e988fa9d616
+		summarizeBy: none
+		sourceColumn: date_created
+
+		variation Variation
+			isDefault
+			relationship: 6ded5d5d-e15d-4ff4-a9a2-f967e49a657a
+			defaultHierarchy: LocalDateTable_4ccb7a6d-89a3-45b7-a6b4-a69347339327.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: f70bd550-25c0-47d0-ae08-b391399f5db4
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 00174875-69da-4b56-aec4-b933caa9dd9e
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		variation Variation
+			isDefault
+			relationship: 538da974-c6c4-4187-b020-2eed648c57c9
+			defaultHierarchy: LocalDateTable_edd45e19-266b-4b69-a4fd-af7abdc29a29.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: 98bfbb4e-849a-4fd0-9253-f90c150dfb08
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column document_upload_policy_id
+		dataType: string
+		lineageTag: adf43e98-59e9-4778-bca0-415f0a5de7b6
+		summarizeBy: none
+		sourceColumn: document_upload_policy_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Checkout_type = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID ()]}[Data],
+				    Dataflow = Workspace {[dataflowId=getDataflowUUID ("Equipment_DF_Test")]}[Data],
+				    #"trutesta_equipment equipment_checkout_type_" = Dataflow {[entity="trutesta_equipment equipment_checkout_type",version=""]}[Data]
+				in
+				    #"trutesta_equipment equipment_checkout_type_"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

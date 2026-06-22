@@ -1,0 +1,234 @@
+table Calibration
+	lineageTag: f0bc9d64-d5e7-4f98-97cd-e3902096dc23
+
+	measure 'Total Cal' = COUNTROWS('Calibration')
+		formatString: 0
+		lineageTag: 86430ffb-5a47-4a35-afa2-556130f7e621
+
+	measure 'Due Count Check' =
+			
+			CALCULATE(
+			    COUNTROWS('Maintenance_Schedule'),
+			    NOT ISBLANK('Maintenance_Schedule'[date_calculated_service_due])
+			)
+		formatString: 0
+		lineageTag: 93b87dbd-2796-42bc-b9f3-31fa73e7c016
+
+	column id
+		dataType: string
+		lineageTag: 834c7ce3-e3c4-4a10-8815-09aedc5175bd
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: c3f5c93b-6dd2-4d72-9644-16026cc3f342
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_id
+		dataType: string
+		lineageTag: cb699388-2d54-46df-8cab-876348521a06
+		summarizeBy: none
+		sourceColumn: equipment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column calibration_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 51679aba-2880-484d-8357-bb1008dc7d06
+		summarizeBy: none
+		sourceColumn: calibration_date
+
+		variation Variation
+			isDefault
+			relationship: 6fc20343-072f-4ca7-9233-5e5819001841
+			defaultHierarchy: LocalDateTable_40f7c1ab-f310-4b7a-84ab-2a5db5aaa768.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column calibration_result
+		dataType: string
+		lineageTag: 174a8228-d4b7-4d38-b5ef-a381fea3b764
+		summarizeBy: none
+		sourceColumn: calibration_result
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8e4a7336-7b21-4591-8491-f2c1c4cde325
+		summarizeBy: none
+		sourceColumn: date_created
+
+		variation Variation
+			isDefault
+			relationship: a34a3fc2-5555-4b3c-a45d-a66ee376029f
+			defaultHierarchy: LocalDateTable_3918342d-394f-4ac7-8c44-b07ea15a35e4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_sent_for_calibration
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9b41e8dc-1ea3-4de6-a495-256f7cfbae08
+		summarizeBy: none
+		sourceColumn: date_sent_for_calibration
+
+		variation Variation
+			isDefault
+			relationship: 5bd3393a-e4dc-4301-8810-150596dbeb44
+			defaultHierarchy: LocalDateTable_10d6e1ee-88af-4e78-a94a-6dbe45ac193e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_service_due
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6b8a4a49-3e2a-4ca1-94d8-29a4a0cecbf1
+		summarizeBy: none
+		sourceColumn: date_service_due
+
+		variation Variation
+			isDefault
+			relationship: 9869065e-c6cf-4b3a-a90b-c164d8e111c9
+			defaultHierarchy: LocalDateTable_7fdead8f-58f4-4f4b-a9f2-252b375084f3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_service_completed
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c60bd987-b82f-4ded-8cb7-3ed03afd861e
+		summarizeBy: none
+		sourceColumn: date_service_completed
+
+		variation Variation
+			isDefault
+			relationship: d4aeee4e-46d0-4862-9a14-919cc17ba7b8
+			defaultHierarchy: LocalDateTable_47655d31-2dea-474a-8407-0c8c0d071c0e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_service_canceled
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: af000a62-58c0-495f-83c8-97f08566a58f
+		summarizeBy: none
+		sourceColumn: date_service_canceled
+
+		variation Variation
+			isDefault
+			relationship: 1c0e950b-d58f-40d6-9230-07ca6a543b59
+			defaultHierarchy: LocalDateTable_8abe3eb6-6afd-44fa-9abf-b82366f45cd4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_type_id
+		dataType: string
+		lineageTag: c6f05df1-f9d4-475f-bc6d-e45095fb4b43
+		summarizeBy: none
+		sourceColumn: service_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_result_id
+		dataType: string
+		lineageTag: a6e2da5f-697d-4c29-8670-40bb7e61829c
+		summarizeBy: none
+		sourceColumn: service_result_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency_iso_code
+		dataType: string
+		lineageTag: 9a64d80a-5e4f-4528-9cd5-8f23b9580faf
+		summarizeBy: none
+		sourceColumn: currency_iso_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_fee
+		dataType: double
+		lineageTag: dc3e174a-9dc9-4c52-b46d-d5edb1895df5
+		summarizeBy: sum
+		sourceColumn: service_fee
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column status_code
+		dataType: string
+		lineageTag: d23b09c4-8d8c-4037-b344-aa565a8135bb
+		summarizeBy: none
+		sourceColumn: status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column maintenance_schedule_id
+		dataType: string
+		lineageTag: ec4b6a00-d3d2-45e6-82e7-47da5e358bef
+		summarizeBy: none
+		sourceColumn: maintenance_schedule_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column compliance_status
+		dataType: string
+		lineageTag: 95fc09c8-3f59-4961-a15a-b2c1c6e8471f
+		summarizeBy: none
+		sourceColumn: compliance_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Service_Type = RELATED(Service_Type[Service Type])
+		lineageTag: d65989f9-8a0e-4ed5-ac22-baf17e1fbc8e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Type' = LOOKUPVALUE(Service_Type[Service Type],Service_Type[id],Calibration[service_type_id])
+		lineageTag: 0061ef7d-8d46-4bd8-b15c-f3d2d5fd1aa8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Type Category' = ```
+			LOOKUPVALUE(Service_Type[Service Type],
+			Service_Type[id], 
+			Calibration[service_type_id],
+			
+			Service_Type[Service Type],
+			"Calibration",
+			
+			"Not Calibration"
+			)
+			```
+		lineageTag: ff706921-4455-4068-ba36-04ade0b73065
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calibration = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID ()]}[Data],
+				    Dataflow = Workspace {[dataflowId=getDataflowUUID ("Equipment_DF_Test")]}[Data],
+				    Calibration_ = Dataflow{[entity="Calibration",version=""]}[Data]
+				in
+				    Calibration_
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

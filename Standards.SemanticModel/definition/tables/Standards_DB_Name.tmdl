@@ -1,0 +1,27 @@
+table Standards_DB_Name
+	lineageTag: 7e896dd3-dca5-4cf7-95f9-00c9c589c38a
+
+	column DBName
+		dataType: string
+		lineageTag: 5f1d960c-a8af-48ff-828d-66ec7380f5f0
+		summarizeBy: none
+		sourceColumn: DBName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Standards_DB_Name = m
+		mode: import
+		source =
+				let
+				     Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID()]}[Data],
+				    Dataflow = Workspace{[dataflowId=getDataflowUUID ("Standards_Test_DF") ]}[Data],
+				    Standards_DB_Name_ = Dataflow{[entity="Standards_DB_Name",version=""]}[Data]
+				in
+				    Standards_DB_Name_
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

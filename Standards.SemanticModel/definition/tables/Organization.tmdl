@@ -1,0 +1,61 @@
+table Organization
+	lineageTag: 59e3b8ec-78b5-4513-9c5e-6207be3bfdb7
+
+	column id
+		dataType: string
+		lineageTag: 1c4df3bf-da0d-4b73-bee3-e70c05aced11
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column organization_name
+		dataType: string
+		lineageTag: bf7ecc20-fcaf-46b2-bbb4-ae9cc25209e5
+		summarizeBy: none
+		sourceColumn: organization_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_id
+		dataType: string
+		lineageTag: de870edb-97ea-47e0-bd2e-92670494f372
+		summarizeBy: none
+		sourceColumn: site_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		lineageTag: e8f52404-856f-4e2f-b30a-2ea7da1a917a
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Organization
+		dataType: string
+		lineageTag: 983b4c0d-e5c0-45b0-9c82-754bdc930f32
+		summarizeBy: none
+		sourceColumn: Organization
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Organization = m
+		mode: import
+		source =
+				let
+				      Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID()]}[Data],
+				    Dataflow = Workspace{[dataflowId=getDataflowUUID ("Resource_Test_DF")]}[Data],
+				    Organization_ = Dataflow{[entity="Organization",version=""]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(Organization_,{{"nice_name", "Organization"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

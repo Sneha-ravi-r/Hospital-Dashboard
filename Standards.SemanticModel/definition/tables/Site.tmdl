@@ -1,0 +1,51 @@
+table Site
+	lineageTag: 624b4ece-c9a4-40f8-83f8-a94888e4d3e5
+
+	column id
+		dataType: string
+		lineageTag: 831c3bce-a90e-4ef4-889d-c7e4f5ca6c0a
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: 2c79085c-5235-4fb2-b778-069097e3829c
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_name
+		dataType: string
+		lineageTag: c8f3647c-5f81-4536-b374-107721acf62f
+		summarizeBy: none
+		sourceColumn: site_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column nice_name
+		dataType: string
+		lineageTag: 209310ba-af80-42d5-9d99-fd349c41b1cf
+		summarizeBy: none
+		sourceColumn: nice_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Site = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID()]}[Data],
+				    Dataflow = Workspace{[dataflowId=getDataflowUUID ("Resource_Test_DF")]}[Data],
+				    Site_ = Dataflow{[entity="Site",version=""]}[Data]
+				in
+				    Site_
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

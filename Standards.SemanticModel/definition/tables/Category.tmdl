@@ -1,0 +1,117 @@
+table Category
+	lineageTag: 9f55a6e2-a5c1-4059-98da-8ead75de5e8e
+
+	measure 'Total Category' = COUNTROWS(Category)
+		formatString: 0
+		lineageTag: 979b7ff8-686f-475b-a4d5-688d5ce63f66
+
+	column id
+		dataType: string
+		lineageTag: 6b023b90-153d-48ba-9720-bbb99d4e0fb1
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: 6ed8e59a-820d-40a0-89c6-ceefec1adaa5
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 770b4f5a-bd9e-4f81-a444-d91df6927e2f
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 78e1c9ab-03e0-4fb0-a6ff-e0177391dc3a
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f503b26-2619-4013-8d9e-59bfa2e361ab
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 78424743-a59c-4490-b782-2c89b38b7893
+		summarizeBy: none
+		sourceColumn: date_created
+
+		variation Variation
+			isDefault
+			relationship: d0adc505-7d0d-4f65-ad18-9e1a3ab0403b
+			defaultHierarchy: LocalDateTable_bfdfcdee-7365-4b15-8abd-85780ef6843c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: fd6c3526-c14c-49e2-abf1-1d6e84052b00
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: af1356c4-9ecd-4677-bf2d-aa8b6a64d710
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		variation Variation
+			isDefault
+			relationship: a3eeab10-7c2c-4b06-afba-77bd42826f9f
+			defaultHierarchy: LocalDateTable_7bcf01a7-9900-439e-b336-de929878dd01.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: e44c97b3-f54f-47a3-bf0a-4ef5b03c0204
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_code
+		dataType: string
+		lineageTag: 6dd64602-76b4-4a0b-97c7-be0090ec2f5f
+		summarizeBy: none
+		sourceColumn: business_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Category = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID()]}[Data],
+				    Dataflow = Workspace{[dataflowId=getDataflowUUID ("Standards_Test_DF") ]}[Data],
+				    Category_ = Dataflow {[entity="Category",version=""]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(Category_,{{"name_text", "Category"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

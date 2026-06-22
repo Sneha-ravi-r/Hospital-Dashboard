@@ -1,0 +1,55 @@
+table Parameter
+	lineageTag: c136c19b-7ed8-42c9-a21b-d648a95533de
+
+	column Parameter
+		lineageTag: febe5c78-7550-4f5c-91b9-5ffde4fa38ab
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: 41c37114-5cf7-46a4-9d45-88584f0fbafc
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: cd226090-42cc-4c05-b319-ed3af948d960
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parameter = calculated
+		mode: import
+		source =
+				{
+				    ("Standard Number", NAMEOF('Standard'[Standard Number]), 0),
+				    ("Standard Title", NAMEOF('Standard'[Standard Title]), 1),
+				    ("Standard Section", NAMEOF('Standard'[Standard Section]), 2),
+				    ("Status", NAMEOF('Standard'[Status]), 3),
+				    ("Standard Name", NAMEOF('Standard'[Standard Name]), 4),
+				    ("Standard Edition", NAMEOF('Standard'[Standard Edition]), 5),
+				    ("Standard Description", NAMEOF('Standard'[Standard Description]), 6),
+				    ("Category", NAMEOF('Category'[Category]), 7),
+				    ("Organization", NAMEOF(Organization[Organization]), 8)
+				}
+
+	annotation PBI_Id = 80428f43d1c9469ead25c145c34db8ca
+

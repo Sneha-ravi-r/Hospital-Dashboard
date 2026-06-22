@@ -1,0 +1,114 @@
+relationship d0adc505-7d0d-4f65-ad18-9e1a3ab0403b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Category.date_created
+	toColumn: LocalDateTable_bfdfcdee-7365-4b15-8abd-85780ef6843c.Date
+
+relationship a3eeab10-7c2c-4b06-afba-77bd42826f9f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Category.date_last_updated
+	toColumn: LocalDateTable_7bcf01a7-9900-439e-b336-de929878dd01.Date
+
+relationship 68ad0bba-2960-4151-a5e1-b2941faaf292
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Delivery Organization'.date_created
+	toColumn: LocalDateTable_a3cdc0f5-6628-4a85-9606-9ef486dfc678.Date
+
+relationship 068b2b7d-c61d-4fdb-be0c-d84cfb4e8525
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Delivery Organization'.date_last_updated
+	toColumn: LocalDateTable_fef4fc85-a762-4dec-a3cb-79bd659d1b39.Date
+
+relationship 2f6fc488-2235-45f0-9b01-bc4be4e68eb0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DF_Last_Updated.'Updated Time in UTC'
+	toColumn: LocalDateTable_323f75ab-224c-4701-994b-fe3023a03de7.Date
+
+relationship 03ac48ae-e83f-4bf7-89e7-901369e8f0ec
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Publisher.date_created
+	toColumn: LocalDateTable_a6eb7434-8594-4c85-8a92-b8b21b09a884.Date
+
+relationship 19307f8d-4d23-4db2-973a-62968f3c266e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Publisher.date_last_updated
+	toColumn: LocalDateTable_b7b622eb-e2c8-4cf2-8db4-a5445cb6303e.Date
+
+relationship b827101e-edca-44da-983e-35d4e3592257
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Standard.date_issued
+	toColumn: LocalDateTable_e295b406-7413-4a53-b12d-d37b214729dd.Date
+
+relationship dd556c19-7fd4-48ba-b66b-37464bd12ac4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Standard.date_revised
+	toColumn: LocalDateTable_1b59fb27-02fa-4c7e-afc7-26a014b82928.Date
+
+relationship 81c032c3-bd69-41ae-9c1c-07b98eb9c531
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Standard.date_last_updated
+	toColumn: LocalDateTable_47bf0c11-404b-48bd-8859-d69f1b7672ad.Date
+
+relationship c2f42649-5886-44d8-aa64-e75b723e01fa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Standard.date_retired
+	toColumn: LocalDateTable_943252be-1af0-4337-8508-6913ad1dce1b.Date
+
+relationship 6fb18161-038e-42c2-a6f8-76eeb7d4d352
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Standard.date_available
+	toColumn: LocalDateTable_290ef326-eb95-48c4-8120-ca1dca937f64.Date
+
+relationship 6b8d4d6a-1d90-4ec4-9446-3d4aee005988
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Standard.date_expires
+	toColumn: LocalDateTable_d0e81e21-5d25-4ced-95a3-d59043c3553f.Date
+
+relationship AutoDetected_7ff3c96d-5608-4acf-b1fe-f90a507de8da
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Delivery Organization'.standard_id
+	toColumn: Standard.id
+
+relationship AutoDetected_08daa011-da7e-425c-a2d2-483f22623332
+	fromColumn: Standard.publisher_id
+	toColumn: Publisher.id
+
+relationship c9ef90a3-7820-8d91-e8dd-d3859d15bab3
+	fromColumn: Publisher.publisher_category_id
+	toColumn: Category.id
+
+relationship b6dfa41d-f70e-4568-9ca2-fd2bcb6e242c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date.Date
+	toColumn: LocalDateTable_1cb26eea-9b80-401e-bf5b-9d19e3ec36f0.Date
+
+relationship 11a90c15-f34d-536e-a58b-ffc7f7cef209
+	fromColumn: Standard.date_created
+	toColumn: Date.Date
+
+relationship 679a7eba-1596-4716-b697-3a26b5a3e479
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Resource.date_created
+	toColumn: LocalDateTable_858247fa-7e80-430f-9e9e-56767be48113.Date
+
+relationship 5588fed9-e99b-414e-8810-730190572859
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Resource.date_last_updated
+	toColumn: LocalDateTable_ed9b2117-d4d5-4606-99ad-391f672f8b47.Date
+
+relationship a3e5f89b-8de2-4e54-93b3-b77a278fd689
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'DF_Last_Updated (2)'.'Updated Time in UTC'
+	toColumn: LocalDateTable_ea5e2b5a-e063-43d9-9330-02ebeebc457c.Date
+
+relationship AutoDetected_2c95d81e-9d36-4320-92ff-b0468f361f66
+	fromColumn: 'Delivery Organization'.organization_id
+	toColumn: Organization.id
+
+relationship AutoDetected_b72a27a6-78d0-40bb-a487-9cfe63677a39
+	fromColumn: Resource.organization_id
+	toColumn: Organization.id
+
+relationship 013e9422-e245-bafc-7592-278110fca2be
+	fromColumn: Organization.site_id
+	toColumn: Site.id
+

@@ -1,0 +1,427 @@
+table Maintenance_Schedule
+	lineageTag: 272cfa18-3ed2-41c9-bd99-8ccb2af2d3f3
+
+	measure 'Cal Within 30 days' =
+			
+			CALCULATE(
+			    COUNTROWS('Maintenance_Schedule'),
+			    'Maintenance_Schedule'[date_calculated_service_due]>= TODAY(),
+			    'Maintenance_Schedule'[date_calculated_service_due]<= TODAY() + 30,
+			    'Service_Type'[is_type_calibration]= 1
+			)
+		formatString: 0
+		lineageTag: d9e684a3-e093-4b31-b168-0976385c3303
+
+	measure 'Cal Within 60 days' =
+			
+			CALCULATE(
+			    COUNTROWS('Maintenance_Schedule'),
+			    'Maintenance_Schedule'[date_calculated_service_due]> TODAY(),
+			    'Maintenance_Schedule'[date_calculated_service_due]<= TODAY() + 60,
+			    'Service_Type'[is_type_calibration]= 1
+			)
+		formatString: 0
+		lineageTag: 89614799-843f-4dfb-90dd-1b64c85612c1
+
+	measure 'Cal Within 90 days' =
+			
+			CALCULATE(
+			    COUNTROWS('Maintenance_Schedule'),
+			    'Maintenance_Schedule'[date_calculated_service_due]> TODAY() + 60,
+			    'Maintenance_Schedule'[date_calculated_service_due]<= TODAY() + 90,
+			    'Service_Type'[is_type_calibration]= 1
+			)
+		formatString: 0
+		lineageTag: cf4f6302-2f6e-4f48-87ff-e233b79f8fdd
+
+	measure 'Cal Overdue' =
+			CALCULATE(COUNTROWS('Maintenance_Schedule'),
+			'Service_Type'[is_type_calibration]= 1,
+			'Maintenance_Schedule'[date_calculated_service_due]<TODAY(),
+			ISBLANK('Maintenance_Schedule'[Date_Service_Completed])
+			)
+		formatString: 0
+		lineageTag: be54aa55-318a-4de6-b774-b35af51216a3
+
+	measure 'Main Within 30 days' =
+			
+			CALCULATE(
+			    COUNTROWS('Maintenance_Schedule'),
+			    'Maintenance_Schedule'[date_calculated_service_due]>= TODAY(),
+			    'Maintenance_Schedule'[date_calculated_service_due]<= TODAY() + 30,
+			    'Service_Type'[is_type_calibration]= 0
+			)
+		formatString: 0
+		lineageTag: 86f4d42f-b780-4db8-8abe-2c9a8486d763
+
+	measure 'Main Within 60 days' =
+			
+			CALCULATE(
+			    COUNTROWS('Maintenance_Schedule'),
+			    'Maintenance_Schedule'[date_calculated_service_due]> TODAY() +30,
+			    'Maintenance_Schedule'[date_calculated_service_due]<= TODAY() + 60,
+			    'Service_Type'[is_type_calibration]= 0
+			)
+		formatString: 0
+		lineageTag: eb889561-6da8-4c3c-88af-28cd08c0cbb2
+
+	measure 'Main Within 90 days' =
+			
+			CALCULATE(
+			    COUNTROWS('Maintenance_Schedule'),
+			    'Maintenance_Schedule'[date_calculated_service_due]> TODAY() + 60,
+			    'Maintenance_Schedule'[date_calculated_service_due]<= TODAY() + 90,
+			    'Service_Type'[is_type_calibration]= 0
+			)
+		formatString: 0
+		lineageTag: 20f696e0-1bb7-40ff-8902-0413fb648287
+
+	measure Space = BLANK()
+		formatString: 0
+		lineageTag: 51ee2f12-badc-4087-aabe-b4f84fa79f9c
+
+	measure 'Total Calibration' =
+			CALCULATE(COUNTROWS('Maintenance_Schedule'),
+			Service_Type[is_type_calibration]=1)
+		formatString: 0
+		lineageTag: 4bc39a44-9d34-4cdb-881f-64d916b7ad24
+
+	measure 'Total Maintenance' =
+			CALCULATE(COUNT('Maintenance_Schedule'[id]),
+			Service_Type[is_type_calibration]=0)
+		formatString: 0
+		lineageTag: 12c5eab8-c0a0-46d8-8888-e2df929e801e
+
+	measure 'Main Overdue' =
+			CALCULATE(COUNTROWS('Maintenance_Schedule'),
+			'Maintenance_Schedule'[date_calculated_service_due]<TODAY(),
+			ISBLANK('Maintenance_Schedule'[Date_Service_Completed]),
+			'Service_Type'[is_type_calibration]= 0)
+		formatString: 0
+		lineageTag: 3dd077d8-ac4b-4103-a987-bf03067408f0
+
+	measure 'Due Count' = CALCULATE(COUNTROWS('Maintenance_Schedule'), NOT ISBLANK(Maintenance_Schedule[date_calculated_service_due]))
+		formatString: 0
+		lineageTag: e7ff1c33-4a17-4f5e-a1d0-ab0cc00b765b
+
+	measure 'Completed Count' = ```
+			CALCULATE(COUNTROWS('Maintenance_Schedule'), USERELATIONSHIP('Date'[Date],'Maintenance_Schedule'[Date_Service_Completed]), NOT ISBLANK('Maintenance_Schedule'[Date_Service_Completed]))
+			
+			```
+		formatString: 0
+		lineageTag: f6c4cdd9-83a2-4206-9167-fb23c3300827
+
+	measure 'Date Service Completed Count' = CALCULATE(COUNTROWS('Maintenance_Schedule'), NOT ISBLANK('Maintenance_Schedule'[Date_Service_Completed]))
+		formatString: 0
+		lineageTag: 47ca2581-ed7b-452c-af3d-78506a4b9b16
+
+	measure 'Eq Overdue' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT('Equipment'[id]),
+			    'Service_Type'[is_type_calibration] = 1,
+			    'Maintenance_Schedule'[date_calculated_service_due] < TODAY(),
+			    ISBLANK('Maintenance_Schedule'[Date_Service_Completed])
+			)
+		formatString: 0
+		lineageTag: 25afc5b5-336b-4616-8721-dfec111c1f7a
+
+	column id
+		dataType: string
+		lineageTag: 8f49a633-134b-40ac-90ce-c1a53a51ccb8
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: c497b0ca-aaf7-4d5d-995a-67a8fd64b232
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column equipment_id
+		dataType: string
+		lineageTag: d263529c-a35d-40ef-90aa-93159c05775d
+		summarizeBy: none
+		sourceColumn: equipment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_type_id
+		dataType: string
+		lineageTag: f8c8ca2b-ac5d-4028-9238-8c7331c663ce
+		summarizeBy: none
+		sourceColumn: service_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column frequency_unit
+		dataType: string
+		lineageTag: e707ce30-b7f7-4488-9fc7-931b36d9a8c1
+		summarizeBy: none
+		sourceColumn: frequency_unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column frequency
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b7807a6-e1e7-45a5-8318-3a220262c2b8
+		summarizeBy: sum
+		sourceColumn: frequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column instructions
+		dataType: string
+		lineageTag: b6a62e9d-2cd1-48d0-9696-26c77576d801
+		summarizeBy: none
+		sourceColumn: instructions
+
+		annotation SummarizationSetBy = Automatic
+
+	column display_order
+		dataType: int64
+		formatString: 0
+		lineageTag: af5d369f-1a15-4c10-9b37-f71aad02e9f3
+		summarizeBy: sum
+		sourceColumn: display_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7e58fd57-9596-49fd-b38a-566106c216d2
+		summarizeBy: none
+		sourceColumn: date_created
+
+		variation Variation
+			isDefault
+			relationship: 4dbf0805-eaf6-4e59-adde-2d07c6a9a845
+			defaultHierarchy: LocalDateTable_3b91cde9-f1f4-422e-a1a4-70d29a147f7a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: 2d559962-a070-4934-9105-ba3f56bfa2a6
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5e340dba-07ec-4da9-a8fa-bfb74a0f8a58
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		variation Variation
+			isDefault
+			relationship: 26fe19b1-338f-46bd-a407-6c8b889e4bb9
+			defaultHierarchy: LocalDateTable_57121ef0-f008-499c-8ecb-eaf82d205b5b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: d5da1694-2c31-4229-a7f9-ad2d3533ac05
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_internal
+		dataType: int64
+		formatString: 0
+		lineageTag: 0bf4a40b-1269-4f52-bdde-ac47e1b3f730
+		summarizeBy: sum
+		sourceColumn: is_internal
+
+		annotation SummarizationSetBy = Automatic
+
+	column oncomplete_document_upload_policy_id
+		dataType: string
+		lineageTag: 4aeae7ae-ddbe-4e9e-8845-75fd107550c9
+		summarizeBy: none
+		sourceColumn: oncomplete_document_upload_policy_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_calculated_service_due
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 84a57671-f29b-4f99-ad67-45817b0826fb
+		summarizeBy: none
+		sourceColumn: date_calculated_service_due
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Status
+		dataType: string
+		lineageTag: 5466fd6c-ceca-4747-b20a-164e7df43244
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_vendor_id
+		dataType: string
+		lineageTag: 44917231-da2b-4c03-9abe-b222264a5730
+		summarizeBy: none
+		sourceColumn: service_vendor_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_threshold
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e5af064-0eaa-463d-87a8-94fda8cdb899
+		summarizeBy: sum
+		sourceColumn: alert_threshold
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_calculated_alert
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9681800a-75e5-4e29-9494-9b3647d3eda3
+		summarizeBy: none
+		sourceColumn: date_calculated_alert
+
+		variation Variation
+			isDefault
+			relationship: aae47045-f5b9-4934-a5dc-40fc37898a8d
+			defaultHierarchy: LocalDateTable_0529d170-d1d4-4c8d-be85-5bab26a1e9d9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column service_vendor_address_instance_id
+		dataType: string
+		lineageTag: 5b5cadc1-e10b-4989-ac3d-3f87b5dccc18
+		summarizeBy: none
+		sourceColumn: service_vendor_address_instance_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_Service_Completed
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d89f76d6-1d25-4e65-8d59-bfec257e4a3b
+		summarizeBy: none
+		sourceColumn: Date_Service_Completed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Calibration Overdue' =
+			
+			IF (
+			    'Maintenance_Schedule'[date_calculated_service_due] < TODAY() &&
+			    ISBLANK('Maintenance_Schedule'[Date_Service_Completed]),
+			    1,
+			    0
+			)
+		formatString: 0
+		lineageTag: 1678aa9b-72d4-4099-af0b-0f5f12da7f13
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Calibration Within 30 Days' =
+			
+			IF (
+			    'Maintenance_Schedule'[date_calculated_service_due] >= TODAY() &&
+			    'Maintenance_Schedule'[date_calculated_service_due] <= TODAY() + 30 &&
+			    ISBLANK('Maintenance_Schedule'[Date_Service_Completed]),
+			    1,
+			    0
+			)
+		formatString: 0
+		lineageTag: da41ac35-ca2f-40f6-914a-66e444fcb2db
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Calibration Within 60 Days' =
+			
+			IF (
+			    'Maintenance_Schedule'[date_calculated_service_due] > TODAY() &&
+			    'Maintenance_Schedule'[date_calculated_service_due] <= TODAY() + 60 &&
+			    ISBLANK(Maintenance_Schedule[Date_Service_Completed]),
+			    1,
+			    0
+			)
+		formatString: 0
+		lineageTag: 591a9550-81f1-4142-8a34-76f696f29a17
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Calibration Within 90 Days' =
+			
+			IF (
+			    'Maintenance_Schedule'[date_calculated_service_due] > TODAY() + 60 &&
+			    'Maintenance_Schedule'[date_calculated_service_due] <= TODAY() + 90 &&
+			    ISBLANK(Maintenance_Schedule[Date_Service_Completed]),
+			    1,
+			    0
+			)
+		formatString: 0
+		lineageTag: 0824a55c-c130-4409-a15f-30273235e208
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Service_Type = RELATED(Service_Type[Service Type])
+		lineageTag: 7bd4bd2b-6ed8-4aed-a2a7-9b6f8757afc5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calibration within 60 days Column' =
+			
+			IF(
+			    'Maintenance_Schedule'[date_calculated_service_due] > TODAY() &&
+			    'Maintenance_Schedule'[date_calculated_service_due] <= TODAY() + 60,
+			    1,
+			    0
+			)
+		formatString: 0
+		lineageTag: 6f225827-9bf1-4551-9735-7ff5874c9e02
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Maintenance_Schedule = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID ()]}[Data],
+				    Dataflow = Workspace {[dataflowId=getDataflowUUID ("Equipment_DF_Test")]}[Data],
+				    #"Maintenance Schedule_" = Dataflow{[entity="Maintenance Schedule",version=""]}[Data],
+				    #"Merged Queries" = Table.NestedJoin(#"Maintenance Schedule_", {"id"}, Date_Service_Completed, {"maintenance_schedule_id"}, "Date_Service_Completed", JoinKind.LeftOuter),
+				    #"Expanded Date_Service_Completed" = Table.ExpandTableColumn(#"Merged Queries", "Date_Service_Completed", {"Date_Service_Completed"}, {"Date_Service_Completed.Date_Service_Completed"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded Date_Service_Completed",{{"Date_Service_Completed.Date_Service_Completed", "Date_Service_Completed"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns","maintenance.state.pending","Pending",Replacer.ReplaceText,{"status_code"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","maintenance.state.completed","Completed",Replacer.ReplaceText,{"status_code"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","equipment.maintenance.schedule.active","Active",Replacer.ReplaceText,{"status_code"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Replaced Value2", each true),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Filtered Rows",{{"status_code", "Status"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

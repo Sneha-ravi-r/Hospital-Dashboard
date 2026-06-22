@@ -1,0 +1,33 @@
+table DF_Last_Updated
+	lineageTag: 7d530767-317a-4b5a-95ad-62663e8b4e86
+
+	column 'Updated Time in UTC'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bf38e12b-38e9-4479-851b-dc7e542d7c51
+		summarizeBy: none
+		sourceColumn: Updated Time in UTC
+
+		variation Variation
+			isDefault
+			relationship: 2f6fc488-2235-45f0-9b01-bc4be4e68eb0
+			defaultHierarchy: LocalDateTable_323f75ab-224c-4701-994b-fe3023a03de7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DF_Last_Updated = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID()]}[Data],
+				    Dataflow = Workspace{[dataflowId=getDataflowUUID ("Standards_Test_DF") ]}[Data],
+				    DF_Last_Updated_ = Dataflow{[entity="DF_Last_Updated",version=""]}[Data]
+				in
+				    DF_Last_Updated_
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

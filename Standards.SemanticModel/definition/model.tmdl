@@ -1,0 +1,52 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Category","Delivery Organization","DF_Last_Updated","Publisher","Standard","Standards_DB_Name","Standards_DF_Version","Site","Resource_DF_Version","Resource_DB_Name","Resource","Organization","DF_Last_Updated (2)","Environment","Workspace","getDataflowUUID","getWorkspaceUUID","Dataflow_UUID","Workspace_UUID","DataflowGen"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Category
+ref table DateTableTemplate_08c012c2-456e-45fe-80f3-77b683e1281b
+ref table LocalDateTable_bfdfcdee-7365-4b15-8abd-85780ef6843c
+ref table LocalDateTable_7bcf01a7-9900-439e-b336-de929878dd01
+ref table 'Delivery Organization'
+ref table LocalDateTable_a3cdc0f5-6628-4a85-9606-9ef486dfc678
+ref table LocalDateTable_fef4fc85-a762-4dec-a3cb-79bd659d1b39
+ref table DF_Last_Updated
+ref table LocalDateTable_323f75ab-224c-4701-994b-fe3023a03de7
+ref table Publisher
+ref table LocalDateTable_a6eb7434-8594-4c85-8a92-b8b21b09a884
+ref table LocalDateTable_b7b622eb-e2c8-4cf2-8db4-a5445cb6303e
+ref table Standard
+ref table LocalDateTable_e295b406-7413-4a53-b12d-d37b214729dd
+ref table LocalDateTable_1b59fb27-02fa-4c7e-afc7-26a014b82928
+ref table LocalDateTable_47bf0c11-404b-48bd-8859-d69f1b7672ad
+ref table LocalDateTable_943252be-1af0-4337-8508-6913ad1dce1b
+ref table LocalDateTable_290ef326-eb95-48c4-8120-ca1dca937f64
+ref table LocalDateTable_d0e81e21-5d25-4ced-95a3-d59043c3553f
+ref table Standards_DB_Name
+ref table Standards_DF_Version
+ref table Date
+ref table LocalDateTable_1cb26eea-9b80-401e-bf5b-9d19e3ec36f0
+ref table Site
+ref table Resource_DF_Version
+ref table Resource_DB_Name
+ref table Resource
+ref table LocalDateTable_858247fa-7e80-430f-9e9e-56767be48113
+ref table LocalDateTable_ed9b2117-d4d5-4606-99ad-391f672f8b47
+ref table Organization
+ref table 'DF_Last_Updated (2)'
+ref table LocalDateTable_ea5e2b5a-e063-43d9-9330-02ebeebc457c
+ref table Parameter
+ref table Dataflow_UUID
+ref table Workspace_UUID
+
+ref cultureInfo en-IN
+

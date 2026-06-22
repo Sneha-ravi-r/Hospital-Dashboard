@@ -1,0 +1,141 @@
+table Publisher
+	lineageTag: 660ea713-178f-4529-aa72-da7153b0060f
+
+	measure 'Total Publishers' = COUNTROWS(Publisher)
+		formatString: 0
+		lineageTag: e9580024-6de4-44ed-a071-b825166047eb
+
+	column id
+		dataType: string
+		lineageTag: 3df53d5b-2807-4d05-b1e9-2f4ac1b162cc
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: cd9cbda5-af03-45f0-aa16-15f8232de60e
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column publisher_category_id
+		dataType: string
+		lineageTag: e2efb14c-49b3-4a6f-ab64-db6aa9b6c99b
+		summarizeBy: none
+		sourceColumn: publisher_category_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Publisher
+		dataType: string
+		lineageTag: 7e39fcff-d38b-4e10-8379-4b8da3f520aa
+		summarizeBy: none
+		sourceColumn: Publisher
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 328e9db4-20c7-41d5-9197-c48c436ac7e7
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: int64
+		formatString: 0
+		lineageTag: 0cc2dff4-5263-46c9-a896-877ee82f1883
+		summarizeBy: sum
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dac61f80-74d0-4b3f-b15d-68f33502f0dd
+		summarizeBy: none
+		sourceColumn: date_created
+
+		variation Variation
+			isDefault
+			relationship: 03ac48ae-e83f-4bf7-89e7-901369e8f0ec
+			defaultHierarchy: LocalDateTable_a6eb7434-8594-4c85-8a92-b8b21b09a884.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: ecabf9cb-f372-473b-bbb0-3dd50d92c3f4
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 53a5a482-c64a-4bc0-b570-649007963349
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		variation Variation
+			isDefault
+			relationship: 19307f8d-4d23-4db2-973a-62968f3c266e
+			defaultHierarchy: LocalDateTable_b7b622eb-e2c8-4cf2-8db4-a5445cb6303e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: 2de0131e-9623-4b77-94ae-184679bb17de
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column standard_format
+		dataType: string
+		lineageTag: 65308f2c-08f1-49cd-91d8-3681e0306dab
+		summarizeBy: none
+		sourceColumn: standard_format
+
+		annotation SummarizationSetBy = Automatic
+
+	column standard_prefix_name
+		dataType: string
+		lineageTag: 2563030a-9fb1-407a-b5f8-cf596877c3e1
+		summarizeBy: none
+		sourceColumn: standard_prefix_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_code
+		dataType: string
+		lineageTag: e7672f8b-240d-4e9e-84d1-0992a544344a
+		summarizeBy: none
+		sourceColumn: business_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Publisher = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID()]}[Data],
+				    Dataflow = Workspace{[dataflowId=getDataflowUUID ("Standards_Test_DF") ]}[Data],
+				    Publisher_ = Dataflow{[entity="Publisher",version=""]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(Publisher_,{{"name_text", "Publisher"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

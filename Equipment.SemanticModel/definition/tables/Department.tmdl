@@ -1,0 +1,44 @@
+table Department
+	lineageTag: f9a2edc4-81ad-465c-a8e0-fbf84a2a65f9
+
+	column id
+		dataType: string
+		lineageTag: d7d41f32-bfd9-4be8-91a0-f1887df4c5d7
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: f7496b1f-2760-4c51-94cd-2f93d7dff56d
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_id
+		dataType: string
+		lineageTag: 4d1549bc-758e-47be-9e72-a2681dee2dc9
+		summarizeBy: none
+		sourceColumn: site_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Department = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID ()]}[Data],
+				    Dataflow = Workspace {[dataflowId=getDataflowUUID ("Equipment_DF_Test")]}[Data],
+				    Department_ = Dataflow{[entity="Department",version=""]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(Department_,{{"name_text", "Department"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

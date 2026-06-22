@@ -1,0 +1,311 @@
+table Standard
+	lineageTag: efb155e1-6e57-424c-83d7-c76b5dabc9e5
+
+	measure 'Total Standards' = COUNTROWS(Standard)
+		formatString: 0
+		lineageTag: a5c362ef-4253-4762-a063-bfb0e92433c8
+
+	column id
+		dataType: string
+		lineageTag: 6adbd531-98e7-41de-bbc0-d07bdc75cc23
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenant_id
+		dataType: string
+		lineageTag: 23e42d25-e55a-4094-abe8-d6ec2b3eda56
+		summarizeBy: none
+		sourceColumn: tenant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column publisher_id
+		dataType: string
+		lineageTag: 74638632-d2f2-435f-8493-4cb0d4cecd7d
+		summarizeBy: none
+		sourceColumn: publisher_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Standard Name'
+		dataType: string
+		lineageTag: 7aa92f8d-afbd-4780-ba7e-1fae3db8713c
+		summarizeBy: none
+		sourceColumn: Standard Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Standard Description'
+		dataType: string
+		lineageTag: 953762c6-f9f9-47b1-902a-a0b55d52ac9e
+		summarizeBy: none
+		sourceColumn: Standard Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Standard Edition'
+		dataType: string
+		lineageTag: 5fbf2ea5-fba3-478d-b381-ffbfdd58db0c
+		summarizeBy: none
+		sourceColumn: Standard Edition
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Standard Section'
+		dataType: string
+		lineageTag: 29aa201b-b5ee-42ae-9bfd-cabcf0a3798c
+		summarizeBy: none
+		sourceColumn: Standard Section
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Standard Title'
+		dataType: string
+		lineageTag: ea8b754c-1eab-402f-8495-afd240138fa1
+		summarizeBy: none
+		sourceColumn: Standard Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column revision_log_id
+		dataType: string
+		lineageTag: c53ddea9-ed34-4b14-a93e-4823647339a5
+		summarizeBy: none
+		sourceColumn: revision_log_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column standard_category_id
+		dataType: string
+		lineageTag: 1cf43e99-22ad-4a2a-8fd9-534dded9d667
+		summarizeBy: none
+		sourceColumn: standard_category_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_issued
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 42789c19-2fd0-454e-98df-3d14ee7f4d3d
+		summarizeBy: none
+		sourceColumn: date_issued
+
+		variation Variation
+			isDefault
+			relationship: b827101e-edca-44da-983e-35d4e3592257
+			defaultHierarchy: LocalDateTable_e295b406-7413-4a53-b12d-d37b214729dd.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_revised
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 12cd2604-24c3-496c-b433-861c46b1419b
+		summarizeBy: none
+		sourceColumn: date_revised
+
+		variation Variation
+			isDefault
+			relationship: dd556c19-7fd4-48ba-b66b-37464bd12ac4
+			defaultHierarchy: LocalDateTable_1b59fb27-02fa-4c7e-afc7-26a014b82928.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f837c3b7-e7be-471a-add1-bddbd445ced0
+		summarizeBy: none
+		sourceColumn: date_created
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_name
+		dataType: string
+		lineageTag: 83ff900c-ccf2-494c-9479-ffa21d7e60a5
+		summarizeBy: none
+		sourceColumn: created_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b8603830-842b-4b65-8ee6-a4994e10906d
+		summarizeBy: none
+		sourceColumn: date_last_updated
+
+		variation Variation
+			isDefault
+			relationship: 81c032c3-bd69-41ae-9c1c-07b98eb9c531
+			defaultHierarchy: LocalDateTable_47bf0c11-404b-48bd-8859-d69f1b7672ad.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastupdated_by_name
+		dataType: string
+		lineageTag: 8e4ccb5d-c224-4be6-ad7d-46b197b7c356
+		summarizeBy: none
+		sourceColumn: lastupdated_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Standard Number'
+		dataType: string
+		lineageTag: fd74c291-8989-45cf-9ce7-d6c8d901182c
+		summarizeBy: none
+		sourceColumn: Standard Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column standard_prefix
+		dataType: string
+		lineageTag: 602cb835-5ee7-4f8e-9a4f-64f1f70629af
+		summarizeBy: none
+		sourceColumn: standard_prefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column calculated_standard_name
+		dataType: string
+		lineageTag: b5d5cbdc-a392-4135-8175-0fc281d27d90
+		summarizeBy: none
+		sourceColumn: calculated_standard_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column about_path
+		dataType: string
+		lineageTag: b626e060-c77c-4d26-aae5-2a23f8dd39d1
+		summarizeBy: none
+		sourceColumn: about_path
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_retired
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c96aec96-feef-4bd7-9257-63afe70aebb1
+		summarizeBy: none
+		sourceColumn: date_retired
+
+		variation Variation
+			isDefault
+			relationship: c2f42649-5886-44d8-aa64-e75b723e01fa
+			defaultHierarchy: LocalDateTable_943252be-1af0-4337-8508-6913ad1dce1b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column requires_review
+		dataType: int64
+		formatString: 0
+		lineageTag: 87b7b236-feb2-4ec2-a4ad-06d44f3cd339
+		summarizeBy: sum
+		sourceColumn: requires_review
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_available
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 50d3b67a-465d-4244-9587-9b7ea12afddc
+		summarizeBy: none
+		sourceColumn: date_available
+
+		variation Variation
+			isDefault
+			relationship: 6fb18161-038e-42c2-a6f8-76eeb7d4d352
+			defaultHierarchy: LocalDateTable_290ef326-eb95-48c4-8120-ca1dca937f64.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_expires
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4d719a62-079b-459f-aa01-39c3d486760b
+		summarizeBy: none
+		sourceColumn: date_expires
+
+		variation Variation
+			isDefault
+			relationship: 6b8d4d6a-1d90-4ec4-9446-3d4aee005988
+			defaultHierarchy: LocalDateTable_d0e81e21-5d25-4ced-95a3-d59043c3553f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column revised_by_standard_id
+		dataType: string
+		lineageTag: 6473e11a-4fe7-4b71-815d-071d75b8a855
+		summarizeBy: none
+		sourceColumn: revised_by_standard_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_from_standard_id
+		dataType: string
+		lineageTag: 84ecd21f-27b8-41ee-82de-0489021cb8fd
+		summarizeBy: none
+		sourceColumn: created_from_standard_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: bf2b4adb-5ed5-49cc-91fe-4c1029045fb4
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column info_url
+		dataType: string
+		lineageTag: 48e7c391-fd86-4ad1-b2bd-e9201acff76c
+		summarizeBy: none
+		sourceColumn: info_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column standard_import_job_id
+		dataType: string
+		lineageTag: f5b947bc-2c93-47e0-ad17-5dfec26112aa
+		summarizeBy: none
+		sourceColumn: standard_import_job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column publication_year
+		dataType: int64
+		formatString: 0
+		lineageTag: b8a099d6-2028-40d3-abfd-fccbeab7b12d
+		summarizeBy: sum
+		sourceColumn: publication_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column directive_id
+		dataType: string
+		lineageTag: d9f90770-3573-4d3e-b79e-256d9169da37
+		summarizeBy: none
+		sourceColumn: directive_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Standard = m
+		mode: import
+		source =
+				let
+				     Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    Workspace = Workspaces{[workspaceId=getWorkspaceUUID()]}[Data],
+				    Dataflow = Workspace{[dataflowId=getDataflowUUID ("Standards_Test_DF") ]}[Data],
+				    Standard_ = Dataflow{[entity="Standard",version=""]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(Standard_,{{"standard_name", "Standard Name"}, {"standard_number", "Standard Number"}, {"standard_section", "Standard Section"}, {"standard_title", "Standard Title"}, {"status_code", "Status"}, {"standard_description", "Standard Description"}, {"standard_edition", "Standard Edition"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
